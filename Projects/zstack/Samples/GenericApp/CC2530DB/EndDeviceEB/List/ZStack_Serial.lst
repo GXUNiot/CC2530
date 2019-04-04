@@ -1,0 +1,486 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Mar/2019  12:31:54 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\ZStack_API\ZStack_Seria #
+#                          l.c                                                #
+#    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)    #
+#                          -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\ZStack_API\ZStack_Seria #
+#                          l.c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D    #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D             #
+#                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\20190310 #
+#                          A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\EndDeviceEB\List\" -lA            #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\CNiot\Desktop\20190310A   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\" -e --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\CNiot\Desktop\20 #
+#                          190310A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\SOURCE\" -I                      #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
+#                          CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
+#                          UDE\" -I "C:\Users\CNiot\Desktop\20190310A         #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
+#                          I\" -I "C:\Users\CNiot\Desktop\20190310A           #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SADDR\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SDATA\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_ #
+#                          LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\SINGLE_CHIP\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\" -I           #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\"   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\ZStack_Serial.lst  #
+#    Object file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\ZStack_Serial.r51   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\CNiot\Desktop\20190310A ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\ZStack_API\ZStack_Serial.c
+      1          #include "ZStack_Serial.h"
+      2          
+      3          
+      4          /****************************************
+      5           * ÂáΩÊï∞ÂêçÔºö Init_Serial
+      6           * ÂäüËÉΩÔºö   ÂàùÂßãÂåñ‰∏≤Âè£
+      7           *      
+      8           * ÂèÇÊï∞:    port-Á´ØÂè£
+      9           *      
+     10           * ËøîÂõûÂÄºÔºö void
+     11          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     12          void Init_Serial(uint8_t port, uint32_t baud)
+   \                     Init_Serial:
+     13          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 29
+   \   000005   74E3         MOV     A,#-0x1d
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 0,R2
+   \   00000C   8B..         MOV     ?V0 + 1,R3
+   \   00000E   8C..         MOV     ?V0 + 2,R4
+   \   000010   8D..         MOV     ?V0 + 3,R5
+     14            halUARTCfg_t uartConfig;
+     15            uartConfig.configured           = TRUE;
+   \   000012   85..82       MOV     DPL,?XSP + 0
+   \   000015   85..83       MOV     DPH,?XSP + 1
+   \   000018   7401         MOV     A,#0x1
+   \   00001A   F0           MOVX    @DPTR,A
+     16          
+     17            switch (baud)
+   \   00001B   78..         MOV     R0,#?V0 + 0
+   \   00001D   12....       LCALL   ?UL_SWITCH_SPARSE
+   \                     `?<Jumptable for Init_Serial>_0`:
+   \   000020   00000000     DD        0
+   \   000024   04000000     DD        4
+   \   000028   004B0000     DD        19200
+   \   00002C   ....         DW        ??Init_Serial_0
+   \   00002E   00960000     DD        38400
+   \   000032   ....         DW        ??Init_Serial_1
+   \   000034   00E10000     DD        57600
+   \   000038   ....         DW        ??Init_Serial_2
+   \   00003A   00C20100     DD        115200
+   \   00003E   ....         DW        ??Init_Serial_3
+   \   000040   ....         DW        ??Init_Serial_4
+     18            {
+     19              case 9600:    uartConfig.baudRate = HAL_UART_BR_9600;
+   \                     ??Init_Serial_4:
+   \   000042   7401         MOV     A,#0x1
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   E4           CLR     A
+   \   000048   8022         SJMP    ??Init_Serial_5
+     20                break;
+     21              case 19200:   uartConfig.baudRate = HAL_UART_BR_19200;
+   \                     ??Init_Serial_0:
+   \   00004A   7401         MOV     A,#0x1
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   7401         MOV     A,#0x1
+   \   000051   8019         SJMP    ??Init_Serial_5
+     22                break;
+     23              case 38400:   uartConfig.baudRate = HAL_UART_BR_38400;
+   \                     ??Init_Serial_1:
+   \   000053   7401         MOV     A,#0x1
+   \   000055   12....       LCALL   ?XSTACK_DISP0_8
+   \   000058   7402         MOV     A,#0x2
+   \   00005A   8010         SJMP    ??Init_Serial_5
+     24                break;
+     25              case 57600:   uartConfig.baudRate = HAL_UART_BR_57600;
+   \                     ??Init_Serial_2:
+   \   00005C   7401         MOV     A,#0x1
+   \   00005E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000061   7403         MOV     A,#0x3
+   \   000063   8007         SJMP    ??Init_Serial_5
+     26                break;
+     27              case 115200:  uartConfig.baudRate = HAL_UART_BR_115200;
+   \                     ??Init_Serial_3:
+   \   000065   7401         MOV     A,#0x1
+   \   000067   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006A   7404         MOV     A,#0x4
+   \                     ??Init_Serial_5:
+   \   00006C   F0           MOVX    @DPTR,A
+     28                break;
+     29              default:      uartConfig.baudRate = HAL_UART_BR_9600;
+     30                break;
+     31            }
+     32          
+     33            uartConfig.flowControl          = FALSE;
+   \   00006D   7402         MOV     A,#0x2
+   \   00006F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000072   E4           CLR     A
+   \   000073   F0           MOVX    @DPTR,A
+     34            uartConfig.flowControlThreshold = SERIAL_THRESH;
+   \   000074   7403         MOV     A,#0x3
+   \   000076   12....       LCALL   ?XSTACK_DISP0_8
+   \   000079   7440         MOV     A,#0x40
+   \   00007B   F0           MOVX    @DPTR,A
+   \   00007C   A3           INC     DPTR
+   \   00007D   E4           CLR     A
+   \   00007E   F0           MOVX    @DPTR,A
+     35            uartConfig.rx.maxBufSize        = SERIAL_RX_SZ;
+   \   00007F   740A         MOV     A,#0xa
+   \   000081   12....       LCALL   ?XSTACK_DISP0_8
+   \   000084   7480         MOV     A,#-0x80
+   \   000086   F0           MOVX    @DPTR,A
+   \   000087   A3           INC     DPTR
+   \   000088   E4           CLR     A
+   \   000089   F0           MOVX    @DPTR,A
+     36            uartConfig.tx.maxBufSize        = SERIAL_TX_SZ;
+   \   00008A   7412         MOV     A,#0x12
+   \   00008C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008F   7480         MOV     A,#-0x80
+   \   000091   F0           MOVX    @DPTR,A
+   \   000092   A3           INC     DPTR
+   \   000093   E4           CLR     A
+   \   000094   F0           MOVX    @DPTR,A
+     37            uartConfig.idleTimeout          = SERIAL_IDLE;
+   \   000095   7405         MOV     A,#0x5
+   \   000097   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009A   7406         MOV     A,#0x6
+   \   00009C   F0           MOVX    @DPTR,A
+     38            uartConfig.intEnable            = TRUE;
+   \   00009D   7416         MOV     A,#0x16
+   \   00009F   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A2   7401         MOV     A,#0x1
+   \   0000A4   F0           MOVX    @DPTR,A
+     39            uartConfig.callBackFunc         = HAL_Serial_CallBack;
+   \   0000A5   741B         MOV     A,#0x1b
+   \   0000A7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AA   74..         MOV     A,#??HAL_Serial_CallBack?relay & 0xff
+   \   0000AC   F0           MOVX    @DPTR,A
+   \   0000AD   A3           INC     DPTR
+   \   0000AE   74..         MOV     A,#(??HAL_Serial_CallBack?relay >> 8) & 0xff
+   \   0000B0   F0           MOVX    @DPTR,A
+     40            HalUARTOpen (MT_UART_DEFAULT_PORT, &uartConfig);  /* Start UART */   
+   \   0000B1                ; Setup parameters for call to function HalUARTOpen
+   \   0000B1   85..82       MOV     DPL,?XSP + 0
+   \   0000B4   85..83       MOV     DPH,?XSP + 1
+   \   0000B7   AA82         MOV     R2,DPL
+   \   0000B9   AB83         MOV     R3,DPH
+   \   0000BB   7900         MOV     R1,#0x0
+   \   0000BD   12....       LCALL   ??HalUARTOpen?relay
+     41          
+     42          }
+   \   0000C0   741D         MOV     A,#0x1d
+   \   0000C2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000C5   7F04         MOV     R7,#0x4
+   \   0000C7   02....       LJMP    ?BANKED_LEAVE_XDATA
+     43          
+     44          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     45          int Printf(uint8_t port, const char*fmt, ...)
+   \                     Printf:
+     46          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 131
+   \   000005   747D         MOV     A,#0x7d
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+     47            char buffer[SERIAL_RX_SZ+1];
+     48          
+     49            va_list arg_ptr;
+     50            va_start(arg_ptr, fmt);
+   \   00000C   748D         MOV     A,#-0x73
+   \   00000E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000011   A882         MOV     R0,DPL
+   \   000013   A983         MOV     R1,DPH
+   \   000015   85..82       MOV     DPL,?XSP + 0
+   \   000018   85..83       MOV     DPH,?XSP + 1
+   \   00001B   E8           MOV     A,R0
+   \   00001C   F0           MOVX    @DPTR,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E9           MOV     A,R1
+   \   00001F   F0           MOVX    @DPTR,A
+     51            vsprintf(buffer, fmt, arg_ptr);
+   \   000020                ; Setup parameters for call to function vsprintf
+   \   000020   85..82       MOV     DPL,?XSP + 0
+   \   000023   85..83       MOV     DPH,?XSP + 1
+   \   000026   8582..       MOV     ?V0 + 0,DPL
+   \   000029   8583..       MOV     ?V0 + 1,DPH
+   \   00002C   78..         MOV     R0,#?V0 + 0
+   \   00002E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000031   EA           MOV     A,R2
+   \   000032   FC           MOV     R4,A
+   \   000033   EB           MOV     A,R3
+   \   000034   FD           MOV     R5,A
+   \   000035   7404         MOV     A,#0x4
+   \   000037   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003A   AA82         MOV     R2,DPL
+   \   00003C   AB83         MOV     R3,DPH
+   \   00003E   12....       LCALL   ??vsprintf?relay
+   \   000041   7402         MOV     A,#0x2
+   \   000043   12....       LCALL   ?DEALLOC_XSTACK8
+     52            va_end(arg_ptr);
+     53            
+     54            HalUARTWrite(port, (uint8*)buffer, strlen(buffer));
+   \   000046                ; Setup parameters for call to function HalUARTWrite
+   \   000046                ; Setup parameters for call to function strlen
+   \   000046   7402         MOV     A,#0x2
+   \   000048   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004B   AA82         MOV     R2,DPL
+   \   00004D   AB83         MOV     R3,DPH
+   \   00004F   12....       LCALL   ??strlen?relay
+   \   000052   EA           MOV     A,R2
+   \   000053   FC           MOV     R4,A
+   \   000054   EB           MOV     A,R3
+   \   000055   FD           MOV     R5,A
+   \   000056   7402         MOV     A,#0x2
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   AA82         MOV     R2,DPL
+   \   00005D   AB83         MOV     R3,DPH
+   \   00005F   EE           MOV     A,R6
+   \   000060   F9           MOV     R1,A
+   \   000061   12....       LCALL   ??HalUARTWrite?relay
+     55            
+     56            return strlen(buffer);
+   \   000064                ; Setup parameters for call to function strlen
+   \   000064   7402         MOV     A,#0x2
+   \   000066   12....       LCALL   ?XSTACK_DISP0_8
+   \   000069   AA82         MOV     R2,DPL
+   \   00006B   AB83         MOV     R3,DPH
+   \   00006D   12....       LCALL   ??strlen?relay
+   \   000070   7483         MOV     A,#-0x7d
+   \   000072   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000075   7F02         MOV     R7,#0x2
+   \   000077   02....       LJMP    ?BANKED_LEAVE_XDATA
+     57          }
+     58          
+     59          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          void HAL_Serial_CallBack(uint8 port, uint8 event)
+   \                     HAL_Serial_CallBack:
+     61          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 128
+   \   000005   7480         MOV     A,#-0x80
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+     62            uint8 buf[SERIAL_RX_SZ];
+     63            //(void)port;
+     64            if (event & (HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT))
+   \   00000E   7407         MOV     A,#0x7
+   \   000010   5F           ANL     A,R7
+   \   000011   6020         JZ      ??HAL_Serial_CallBack_0
+     65            {
+     66              HalUARTRead(port, buf,SERIAL_RX_SZ);
+   \   000013                ; Setup parameters for call to function HalUARTRead
+   \   000013   7C80         MOV     R4,#-0x80
+   \   000015   7D00         MOV     R5,#0x0
+   \   000017   85..82       MOV     DPL,?XSP + 0
+   \   00001A   85..83       MOV     DPH,?XSP + 1
+   \   00001D   AA82         MOV     R2,DPL
+   \   00001F   AB83         MOV     R3,DPH
+   \   000021   12....       LCALL   ??HalUARTRead?relay
+     67              #if Serial_CallBack_Enable
+     68              Serial_CallBack(port, buf);
+   \   000024                ; Setup parameters for call to function Serial_CallBack
+   \   000024   85..82       MOV     DPL,?XSP + 0
+   \   000027   85..83       MOV     DPH,?XSP + 1
+   \   00002A   AA82         MOV     R2,DPL
+   \   00002C   AB83         MOV     R3,DPH
+   \   00002E   EE           MOV     A,R6
+   \   00002F   F9           MOV     R1,A
+   \   000030   12....       LCALL   ??Serial_CallBack?relay
+     69              #else
+     70              HalUARTWrite(port, (uint8*)buf,strlen((char*)buf));
+     71              #endif
+     72              
+     73            }
+     74          }
+   \                     ??HAL_Serial_CallBack_0:
+   \   000033   7480         MOV     A,#-0x80
+   \   000035   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000038   7F01         MOV     R7,#0x1
+   \   00003A   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_Serial?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_Serial
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Printf?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Printf
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HAL_Serial_CallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HAL_Serial_CallBack
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     HAL_Serial_CallBack      0      0    137
+       -> HalUARTRead         0      0    274
+       -> Serial_CallBack     0      0    274
+     Init_Serial              0      0     41
+       -> HalUARTOpen         0      0     82
+     Printf                   0      0    143
+       -> vsprintf            0      0    286
+       -> strlen              0      0    282
+       -> HalUARTWrite        0      0    282
+       -> strlen              0      0    282
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     Init_Serial                  202
+     Printf                       122
+     HAL_Serial_CallBack           61
+     ??Init_Serial?relay            6
+     ??Printf?relay                 6
+     ??HAL_Serial_CallBack?relay    6
+
+ 
+ 385 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+ 
+ 403 bytes of CODE memory
+
+Errors: none
+Warnings: none

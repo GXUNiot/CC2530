@@ -1,0 +1,229 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Mar/2019  12:31:42 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\CNiot\CC2530_API\BitCalculati #
+#                          on.c                                               #
+#    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)    #
+#                          -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\CNiot\CC2530_API\BitCalculati #
+#                          on.c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D   #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D             #
+#                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\20190310 #
+#                          A ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\EndDeviceEB\List\" -lA            #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\CNiot\Desktop\20190310A   #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\" -e --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\CNiot\Desktop\20 #
+#                          190310A ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\SOURCE\" -I                      #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
+#                          CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
+#                          UDE\" -I "C:\Users\CNiot\Desktop\20190310A         #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
+#                          I\" -I "C:\Users\CNiot\Desktop\20190310A           #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SADDR\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SDATA\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_ #
+#                          LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\SINGLE_CHIP\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\" -I           #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\"   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\BitCalculation.lst #
+#    Object file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ·À»ð·ÀµÁÏµÍ³\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\BitCalculation.r51  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\CNiot\Desktop\20190310A ·À»ð·ÀµÁÏµÍ³\Project\CNiot\CC2530_API\BitCalculation.c
+      1          #include "BitCalculation.h"
+      2          
+      3          /****************************************
+      4           * º¯ÊýÃû£º T4_Init
+      5           * ¹¦ÄÜ£º   ³õÊ¼»¯¶¨Ê±Æ÷4
+      6           *      
+      7           * ²ÎÊý:    bit-bitÊý
+      8           *      
+      9           * ·µ»ØÖµ£º uint8_t-bitËùÔÚµÄÎ»ÖÃ
+     10          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     11          uint8_t BitToNum(uint8_t bit)
+   \                     BitToNum:
+     12          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     13            uint8_t index=0;
+     14            for(index=0; index<8; index++)
+   \   000007   7900         MOV     R1,#0x0
+     15              if( (bit & (0x01<<index)) == (0x01<<index) )
+   \                     ??BitToNum_0:
+   \   000009   75..01       MOV     ?V0 + 0,#0x1
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
+   \   00000F   E9           MOV     A,R1
+   \   000010   78..         MOV     R0,#?V0 + 0
+   \   000012   12....       LCALL   ?S_SHL
+   \   000015   AA..         MOV     R2,?V0 + 0
+   \   000017   EE           MOV     A,R6
+   \   000018   5A           ANL     A,R2
+   \   000019   FC           MOV     R4,A
+   \   00001A   EA           MOV     A,R2
+   \   00001B   6C           XRL     A,R4
+   \   00001C   7002         JNZ     ??BitToNum_1
+   \   00001E   E5..         MOV     A,?V0 + 1
+   \                     ??BitToNum_1:
+   \   000020   6009         JZ      ??BitToNum_2
+     16                return index;
+   \   000022   09           INC     R1
+   \   000023   E9           MOV     A,R1
+   \   000024   C3           CLR     C
+   \   000025   9408         SUBB    A,#0x8
+   \   000027   40E0         JC      ??BitToNum_0
+     17            return 0xFF;
+   \   000029   79FF         MOV     R1,#-0x1
+   \                     ??BitToNum_2:
+   \   00002B   7F02         MOV     R7,#0x2
+   \   00002D   02....       LJMP    ?BANKED_LEAVE_XDATA
+     18          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??BitToNum?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    BitToNum
+
+   Maximum stack usage in bytes:
+
+     Function ISTACK PSTACK XSTACK
+     -------- ------ ------ ------
+     BitToNum     0      0     10
+
+
+   Segment part sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     BitToNum           48
+     ??BitToNum?relay    6
+
+ 
+ 48 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+ 
+ 54 bytes of CODE memory
+
+Errors: none
+Warnings: none

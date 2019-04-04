@@ -1,0 +1,1295 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        21/Mar/2019  12:36:29 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Users\CNiot\Desktop\20190310A                  /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c                /
+//    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A              /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev. /
+//                          cfg" (-DCPU32MHZ -DROOT=__near_func               /
+//                          -DBLINK_LEDS) -f "C:\Users\CNiot\Desktop\20190310 /
+//                          A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConf /
+//                          ig.cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0         /
+//                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800         /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Users\CNiot\Desktop\20 /
+//                          190310A ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c" -D    /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D            /
+//                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\2019031 /
+//                          0A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\EndDeviceEB\List\" -lA         /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\List\"                /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\Obj\" -e --debug      /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\" -I "C:\Users\CNiot\Desktop\2019 /
+//                          0310A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Sample /
+//                          s\GenericApp\CC2530DB\..\SOURCE\" -I              /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I      /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\"    /
+//                          -I "C:\Users\CNiot\Desktop\20190310A              /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INC /
+//                          LUDE\" -I "C:\Users\CNiot\Desktop\20190310A       /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TAR /
+//                          GET\CC2530EB\" -I "C:\Users\CNiot\Desktop\2019031 /
+//                          0A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL /
+//                          \MCU\CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A /
+//                           ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gen /
+//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\I /
+//                          NCLUDE\" -I "C:\Users\CNiot\Desktop\20190310A     /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\A /
+//                          F\" -I "C:\Users\CNiot\Desktop\20190310A          /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N /
+//                          WK\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          EC\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          API\" -I "C:\Users\CNiot\Desktop\20190310A        /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          YS\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\Z /
+//                          DO\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8 /
+//                          W\" -I "C:\Users\CNiot\Desktop\20190310A          /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"  /
+//                          -I "C:\Users\CNiot\Desktop\20190310A              /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE /
+//                          S\SADDR\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE /
+//                          S\SDATA\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INC /
+//                          LUDE\" -I "C:\Users\CNiot\Desktop\20190310A       /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIG /
+//                          H_LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW /
+//                          _LEVEL\srf04\" -I "C:\Users\CNiot\Desktop\2019031 /
+//                          0A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\ /
+//                          LOW_LEVEL\srf04\SINGLE_CHIP\" -I                  /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\" -I         /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\" /
+//                           -I "C:\Users\CNiot\Desktop\20190310A             /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\" /
+//                           -I "C:\Users\CNiot\Desktop\20190310A             /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\" /
+//                           -Ohz                                             /
+//    List file          =  C:\Users\CNiot\Desktop\20190310A                  /
+//                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\List\CNiot.s51        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME CNiot
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?XLOAD_R2345
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Flash?relay
+        FUNCTION ??Flash?relay,0203H
+        PUBLIC ??MessageProcess?relay
+        FUNCTION ??MessageProcess?relay,0203H
+        PUBLIC ??NETState_Process?relay
+        FUNCTION ??NETState_Process?relay,0203H
+        PUBLIC ??Serial_CallBack?relay
+        FUNCTION ??Serial_CallBack?relay,0203H
+        PUBLIC ??loop?relay
+        FUNCTION ??loop?relay,0203H
+        PUBLIC ??setup?relay
+        FUNCTION ??setup?relay,0203H
+        PUBLIC Flash
+        FUNCTION Flash,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC IC_UID
+        PUBLIC MessageProcess
+        FUNCTION MessageProcess,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC NETState_Process
+        FUNCTION NETState_Process,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Serial_CallBack
+        FUNCTION Serial_CallBack,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK _A_P1
+        PUBWEAK __Constant_1c200
+        PUBWEAK __Constant_3f800000
+        PUBLIC loop
+        FUNCTION loop,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC setup
+        FUNCTION setup,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 4, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+Init_Serial         SYMBOL "Init_Serial"
+T4_Init             SYMBOL "T4_Init"
+Ticker              SYMBOL "Ticker"
+fPinMode            SYMBOL "fPinMode"
+Printf              SYMBOL "Printf"
+SendPoint           SYMBOL "SendPoint"
+??Init_Serial?relay SYMBOL "?relay", Init_Serial
+??Printf?relay      SYMBOL "?relay", Printf
+??SendPoint?relay   SYMBOL "?relay", SendPoint
+??T4_Init?relay     SYMBOL "?relay", T4_Init
+??Ticker?relay      SYMBOL "?relay", Ticker
+??fPinMode?relay    SYMBOL "?relay", fPinMode
+Flash               SYMBOL "Flash"
+??Flash?relay       SYMBOL "?relay", Flash
+MessageProcess      SYMBOL "MessageProcess"
+??MessageProcess?relay SYMBOL "?relay", MessageProcess
+NETState_Process    SYMBOL "NETState_Process"
+??NETState_Process?relay SYMBOL "?relay", NETState_Process
+Serial_CallBack     SYMBOL "Serial_CallBack"
+??Serial_CallBack?relay SYMBOL "?relay", Serial_CallBack
+loop                SYMBOL "loop"
+??loop?relay        SYMBOL "?relay", loop
+setup               SYMBOL "setup"
+??setup?relay       SYMBOL "?relay", setup
+
+        EXTERN Init_Serial
+        FUNCTION Init_Serial,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN T4_Init
+        FUNCTION T4_Init,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Ticker
+        FUNCTION Ticker,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 4, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN fPinMode
+        FUNCTION fPinMode,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Printf
+        FUNCTION Printf,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SendPoint
+        FUNCTION SendPoint,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??Init_Serial?relay
+        FUNCTION ??Init_Serial?relay,00H
+        EXTERN ??Printf?relay
+        FUNCTION ??Printf?relay,00H
+        EXTERN ??SendPoint?relay
+        FUNCTION ??SendPoint?relay,00H
+        EXTERN ??T4_Init?relay
+        FUNCTION ??T4_Init?relay,00H
+        EXTERN ??Ticker?relay
+        FUNCTION ??Ticker?relay,00H
+        EXTERN ??fPinMode?relay
+        FUNCTION ??fPinMode?relay,00H
+
+// C:\Users\CNiot\Desktop\20190310A ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c
+//    1 #include "CNiot.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+//    2 
+//    3 
+//    4 
+//    5 #define SMOKE
+//    6 #define HUMIR
+//    7 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//    8 char* IC_UID;
+IC_UID:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//    9 
+//   10 void Flash(void);
+//   11 
+//   12 #ifdef ZDO_COORDINATOR
+//   13 
+//   14 void InitKeyINT(void);
+//   15 void KEY1_Callback(void);
+//   16 
+//   17 enum SECURITY_STATE{CLOSE,WAIT,OPEN}Security;
+//   18 enum ALERT_STATE{NORMAL,ALERT,WARNING,DANGER}Alert; //ÂÖ•‰æµÊä•Ë≠¶WARNING ÁÅ´ÁÅæÁÉüÈõæDANGER
+//   19 
+//   20 //ÂÆâ‰øùÂºÄÂêØÂÄíËÆ°Á®ãÂ∫è
+//   21 uint8_t SecurityOpenCountdown_TASKID;
+//   22 void SecurityOpenCountdown(void);
+//   23 
+//   24 
+//   25 //ÂÖ•‰æµÊä•Ë≠¶ÂÄíËÆ°Êó∂
+//   26 uint8_t AlertWarningCountdown_TASKID;
+//   27 void AlertWarningCountdown(void);
+//   28 
+//   29 //Âç°Âè∑
+//   30 #define ADMIN_IC_MUN  2
+//   31 #define ADMIN_UID_NUM 8
+//   32 const char ADMIN_IC[ADMIN_IC_MUN][ADMIN_UID_NUM] = {
+//   33 {'9','A','F','4','A','0','1','0'},
+//   34 {'C','6','2','7','F','1','8','0'}
+//   35 };
+//   36 
+//   37 //ËúÇÈ∏£Âô®
+//   38 #define BEEP      P0_0
+//   39 #define BEEP_ON   1
+//   40 #define BEEP_OFF  0
+//   41 uint8_t BEEP_RUN_FLAG;
+//   42 
+//   43 //Èó®Á£Å
+//   44 #define DOOR        P1_5
+//   45 #define DOOR_OPEN   1
+//   46 #define DOOR_CLOSE  0
+//   47 
+//   48 #else
+//   49 
+//   50 #ifdef SMOKE
+//   51 #define SMOKE_AO  P0_0
+//   52 #define SMOKE_DO  P1_5
+//   53 #endif
+//   54 
+//   55 #ifdef HUMIR
+//   56 #define HUMIR_IO  P1_3
+//   57 #endif
+//   58 
+//   59 #endif 
+//   60 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   61 void setup(void)
+setup:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function setup
+        CODE
+//   62 {
+        FUNCALL setup, Init_Serial
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, T4_Init
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, Ticker
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 4, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 4, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, fPinMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, fPinMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, fPinMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, fPinMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, fPinMode
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL setup, Printf
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   63   Init_Serial(1,115200);
+        ; Setup parameters for call to function Init_Serial
+        MOV     DPTR,#__Constant_1c200
+        LCALL   ?XLOAD_R2345
+        MOV     R1,#0x1
+        LCALL   ??Init_Serial?relay
+//   64 
+//   65   //ÂàùÂßãÂåñT4Áî®‰∫éÊîØÊåÅ TimeOut
+//   66   T4_Init();
+        ; Setup parameters for call to function T4_Init
+        LCALL   ??T4_Init?relay
+//   67 
+//   68   Ticker(Flash,1);
+        ; Setup parameters for call to function Ticker
+        MOV     DPTR,#__Constant_3f800000
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+        CFI CFA_XSP16 add(XSP16, 4)
+        MOV     R2,#??Flash?relay & 0xff
+        MOV     R3,#(??Flash?relay >> 8) & 0xff
+        LCALL   ??Ticker?relay
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 XSP16+0
+//   69 
+//   70   //ÂàùÂßãÂåñLED
+//   71   PinMode(P1_0,OUTPUT);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x8
+        MOV     R2,#0x1
+        MOV     R3,#0x2
+        LCALL   ??fPinMode?relay
+//   72   PinMode(P1_1,OUTPUT);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x8
+        MOV     R2,#0x2
+        MOV     R3,#0x2
+        LCALL   ??fPinMode?relay
+//   73   PinMode(P1_4,OUTPUT);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x8
+        MOV     R2,#0x10
+        MOV     R3,#0x2
+        LCALL   ??fPinMode?relay
+//   74 
+//   75 #ifdef ZDO_COORDINATOR
+//   76 
+//   77   //ÂàùÂßãÂåñËúÇÈ∏£Âô®
+//   78   PinMode(P0_0,OUTPUT);
+//   79   BEEP = BEEP_OFF;
+//   80   BEEP_RUN_FLAG = 0;
+//   81 
+//   82   //ÂàùÂßãÂåñÈó®Á£Å
+//   83   PinMode(P1_5,INPUT_UP);
+//   84   
+//   85 
+//   86   IC_Init();
+//   87 
+//   88   OLED_Init();                      //oled ÂàùÂßãÂåñ  
+//   89   OLED_CLS();                      //Â±èÂÖ®‰∫Æ 
+//   90   //OLED_welcome();
+//   91   OLED_P8x16Str(0, 0, "Security System");   //ÊòæÁ§∫Âú®Á¨¨‰∏ÄË°å
+//   92   OLED_P8x16Str(0, 2, "Security:CLOSE");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//   93   OLED_P8x16Str(0, 4, "Alert:NORMAL");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//   94   OLED_P8x16Str(0, 6, "2019-03-30");     //ÊòæÁ§∫Âú®Á¨¨ÂõõË°å
+//   95 
+//   96   //ÂàùÂßãÂåñKEY
+//   97   attachInterrupt(P0_1,KEY1_Callback,FALL);//‰ΩøÁî®ÊåâÈîÆ1ÂºÄÂêØÂÆâÈò≤
+//   98 
+//   99   LED2 = LED2_OFF;
+//  100   Security = CLOSE;  //ÂÆâ‰øùÂÖ≥Èó≠
+//  101 
+//  102   Alert = NORMAL;     //Ë≠¶ÊàíÊ≠£Â∏∏
+//  103 #else
+//  104 
+//  105 
+//  106 #ifdef SMOKE
+//  107   PinMode(P1_5,INPUT_UP);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x1
+        MOV     R2,#0x20
+        MOV     R3,#0x2
+        LCALL   ??fPinMode?relay
+//  108 #endif
+//  109 
+//  110 #ifdef HUMIR
+//  111   PinMode(P1_3,INPUT_DOWN);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x2
+        MOV     R2,#0x8
+        MOV     R3,#0x2
+        LCALL   ??fPinMode?relay
+//  112 #endif
+//  113 
+//  114 
+//  115 #endif 
+//  116 
+//  117   Printf(0," Sys is ready\r\n");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant " Sys is ready\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant " Sys is ready\\r\\n">` >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Printf?relay
+        CFI EndBlock cfiBlock0
+//  118 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+-5
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI DPH0 Frame(CFA_SP, 5)
+        POP     DPH
+        CFI CFA_SP SP+-4
+        CFI DPH0 SameValue
+        POP     DPL
+        CFI CFA_SP SP+-3
+        CFI DPL0 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//  119 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  120 void loop(void)
+loop:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function loop
+        CODE
+//  121 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  122 #ifdef ZDO_COORDINATOR
+//  123   uint8_t i,j,flag;
+//  124   
+//  125   IC_UID = IC_ReadUID();
+//  126   if( IC_UID != NULL )
+//  127   {
+//  128     Printf(0,"UID:%s\r\n",IC_UID);
+//  129     for(i=0; i<ADMIN_IC_MUN; i++)
+//  130     {
+//  131       flag = 1;
+//  132 
+//  133       for(j=0; j<ADMIN_UID_NUM; j++)
+//  134         if( IC_UID[j] != ADMIN_IC[i][j] )
+//  135           flag = 0;
+//  136 
+//  137       if( flag )
+//  138       {
+//  139         if( Security == OPEN )
+//  140         {
+//  141           Security = CLOSE;
+//  142           Alert = NORMAL;
+//  143           BEEP_RUN_FLAG = 0;
+//  144           BEEP = BEEP_OFF;
+//  145           Printf(0,"Security Close\r\n");
+//  146           OLED_P8x16Str(0, 2, "Security:CLOSE");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//  147           OLED_P8x16Str(0, 4, "Alert:NORMAL ");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//  148         }
+//  149       }
+//  150       
+//  151     }
+//  152     IC_UID = NULL;
+//  153   }
+//  154     
+//  155 
+//  156 
+//  157   if( Security == OPEN )
+//  158   {
+//  159 
+//  160     if( DOOR == DOOR_OPEN && Alert == NORMAL  )
+//  161     {
+//  162       if( DOOR == DOOR_OPEN ) 
+//  163       {
+//  164         Alert = ALERT;
+//  165         AlertWarningCountdown_TASKID = Ticker(AlertWarningCountdown,1);
+//  166       }
+//  167     }
+//  168   }
+//  169 #else 
+//  170 
+//  171 
+//  172 
+//  173 #endif 
+//  174 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//  175 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  176 void Flash(void)
+Flash:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Flash
+        CODE
+//  177 {
+        FUNCALL Flash, Printf
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Flash, SendPoint
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Flash, Printf
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Flash, SendPoint
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Flash, Printf
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  178   LED1 = !LED1;
+        SETB    B.0
+        MOV     C,0x90.0
+        JNB     B.0,??Flash_0
+        CPL     C
+??Flash_0:
+        MOV     0x90.0,C
+//  179   Printf(0,"^");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "^">` & 0xff
+        MOV     R3,#(`?<Constant "^">` >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Printf?relay
+//  180 
+//  181 #ifdef ZDO_COORDINATOR
+//  182   if( BEEP_RUN_FLAG )
+//  183   {
+//  184     BEEP = !BEEP;
+//  185   }
+//  186 #else
+//  187 
+//  188 #ifdef SMOKE
+//  189 
+//  190   if( SMOKE_DO == 0 )
+        MOV     C,0x90.5
+        JC      ??Flash_1
+//  191   {
+//  192     if( SMOKE_DO == 0 )
+        MOV     C,0x90.5
+        JC      ??Flash_1
+//  193     {
+//  194       SendPoint(0x0000,"S:1");
+        ; Setup parameters for call to function SendPoint
+        MOV     R4,#`?<Constant "S:1">` & 0xff
+        MOV     R5,#(`?<Constant "S:1">` >> 8) & 0xff
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LCALL   ??SendPoint?relay
+//  195       Printf(0,"S:1\r\n");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "S:1\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "S:1\\r\\n">` >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Printf?relay
+//  196     }
+//  197   }
+//  198   
+//  199 #endif
+//  200 
+//  201 #ifdef HUMIR
+//  202   
+//  203   if( HUMIR_IO == 1 )
+??Flash_1:
+        MOV     C,0x90.3
+        JNC     ??Flash_2
+//  204   {
+//  205     if( HUMIR_IO == 1 )
+        MOV     C,0x90.3
+        JNC     ??Flash_2
+//  206     {
+//  207       SendPoint(0x0000,"H:1");
+        ; Setup parameters for call to function SendPoint
+        MOV     R4,#`?<Constant "H:1">` & 0xff
+        MOV     R5,#(`?<Constant "H:1">` >> 8) & 0xff
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LCALL   ??SendPoint?relay
+//  208       Printf(0,"H:1\r\n");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "H:1\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "H:1\\r\\n">` >> 8) & 0xff
+        MOV     R1,#0x0
+        LCALL   ??Printf?relay
+//  209     }
+//  210   }
+//  211 
+//  212 #endif
+//  213 
+//  214 #endif
+//  215 }
+??Flash_2:
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock3
+        REQUIRE _A_P1
+//  216 
+//  217 #ifdef ZDO_COORDINATOR
+//  218 
+//  219 void KEY1_Callback(void)
+//  220 {
+//  221   while(KEY1);//Á≠âÂæÖÊåâÈîÆÁ®≥ÂÆö
+//  222 
+//  223   if( Security == CLOSE )
+//  224   {
+//  225     Security = WAIT;
+//  226     SecurityOpenCountdown_TASKID = Ticker(SecurityOpenCountdown,1);
+//  227     Printf(0,"Security Wait\r\n");
+//  228     OLED_P8x16Str(0, 2, "Security: Wait");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//  229   }
+//  230 
+//  231 }
+//  232 
+//  233 //ÂÆâÈò≤ÂºÄÂêØÂÄíËÆ°Êó∂
+//  234 void SecurityOpenCountdown(void)
+//  235 { 
+//  236   static uint8_t OpenCountdown = 10;
+//  237   
+//  238   LED2 = !LED2;
+//  239   BEEP = BEEP_ON;
+//  240   Printf(0,"Security Warning %d\r\n",OpenCountdown);
+//  241   if( --OpenCountdown <= 0 && Security == WAIT )
+//  242   {
+//  243     TickerDel(SecurityOpenCountdown_TASKID);
+//  244     LED2 = LED2_ON;
+//  245     Security = OPEN;
+//  246     OpenCountdown = 10;
+//  247     Printf(0,"Security Open\r\n");
+//  248     OLED_P8x16Str(0, 2, "Security: OPEN");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//  249   }
+//  250   BEEP = BEEP_OFF;
+//  251 }
+//  252 
+//  253 //ÂÖ•‰æµÊä•Ë≠¶ÂÄíËÆ°Êó∂
+//  254 void AlertWarningCountdown(void)
+//  255 {
+//  256   static uint8_t WarningCountdown = 10;
+//  257   
+//  258   LED2 = !LED2;
+//  259   BEEP = BEEP_ON;
+//  260   Printf(0,"WARNING Wait %d\r\n",WarningCountdown);
+//  261   if( --WarningCountdown <= 0 && Alert == ALERT )
+//  262   {
+//  263     TickerDel(AlertWarningCountdown_TASKID);
+//  264     LED2 = LED2_ON;
+//  265     Alert = WARNING;
+//  266     BEEP_RUN_FLAG = 1;
+//  267     WarningCountdown = 10;
+//  268     Printf(0,"Alert WARNING\r\n");
+//  269     OLED_P8x16Str(0, 4, "Alert:WARNING");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+//  270   }
+//  271   BEEP = BEEP_OFF;
+//  272 }
+//  273 
+//  274 #else
+//  275 
+//  276 #endif
+//  277 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  278 void Serial_CallBack(uint8_t port, uint8_t* buf)
+Serial_CallBack:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Serial_CallBack
+        CODE
+//  279 {
+        FUNCALL Serial_CallBack, Printf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  280   Printf(port,"OK\r\n");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "OK\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "OK\\r\\n">` >> 8) & 0xff
+        LCALL   ??Printf?relay
+        CFI EndBlock cfiBlock4
+//  281 }
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//  282 
+//  283 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  284 void MessageProcess(uint16_t addr, uint8_t *data)
+MessageProcess:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function MessageProcess
+        CODE
+//  285 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  286   LED3 =!LED3;
+        SETB    B.0
+        MOV     C,0x90.4
+        JNB     B.0,??MessageProcess_0
+        CPL     C
+??MessageProcess_0:
+        MOV     0x90.4,C
+//  287 #ifdef ZDO_COORDINATOR
+//  288   char data_name[8];
+//  289   int data_value=0;
+//  290 
+//  291   Printf(0,"Receive:%d>_%s\r\n",addr,data);
+//  292 
+//  293   if( sscanf((const char*)data,"%s,%d",data_name,data_value) ==2 )
+//  294   {
+//  295     if( Security == OPEN )
+//  296     {
+//  297       if( data_name[0] == 'S' )
+//  298         if( data_value == 1 )
+//  299           Alert = DANGER;
+//  300 
+//  301       if( data_name[0] == 'H' )
+//  302         if( data_value == 1 )
+//  303           Alert = WARNING;
+//  304     }
+//  305   }
+//  306 
+//  307 #else
+//  308 
+//  309   
+//  310 #endif
+//  311 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P1
+//  312 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  313 void NETState_Process(devStates_t devState)
+NETState_Process:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function NETState_Process
+        CODE
+//  314 {
+        FUNCALL NETState_Process, Printf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL NETState_Process, Printf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL NETState_Process, Printf
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  315   switch (devState)
+        ADD     A,#-0x6
+        JZ      ??NETState_Process_0
+        DEC     A
+        JZ      ??NETState_Process_1
+        ADD     A,#-0x2
+        JNZ     ??NETState_Process_2
+//  316   {
+//  317     //‰Ωú‰∏∫ÂçèË∞É   
+//  318     case DEV_ZB_COORD:    Printf(0,"This is Coordinator\r\n");
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "This is Coordinator\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "This is Coordinator\\r\\n">` >> 8) & 0xff
+        SJMP    ??NETState_Process_3
+//  319       break;
+//  320     //‰Ωú‰∏∫Ë∑ØÁî±
+//  321     case DEV_ROUTER:      Printf(0,"This is Route\r\n");
+??NETState_Process_1:
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "This is Route\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "This is Route\\r\\n">` >> 8) & 0xff
+        SJMP    ??NETState_Process_3
+//  322       break;
+//  323     //‰Ωú‰∏∫ÁªàÁ´Ø
+//  324     case DEV_END_DEVICE:  Printf(0,"This is EndDevice\r\n");
+??NETState_Process_0:
+        ; Setup parameters for call to function Printf
+        MOV     R2,#`?<Constant "This is EndDevice\\r\\n">` & 0xff
+        MOV     R3,#(`?<Constant "This is EndDevice\\r\\n">` >> 8) & 0xff
+??NETState_Process_3:
+        MOV     R1,#0x0
+        LCALL   ??Printf?relay
+//  325                           
+//  326       break;
+//  327 
+//  328     default:
+//  329       break;
+//  330   }
+//  331 }
+??NETState_Process_2:
+        SJMP    ?Subroutine1
+        CFI EndBlock cfiBlock7
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??setup?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    setup
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??loop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    loop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Flash?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Flash
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Serial_CallBack?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Serial_CallBack
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MessageProcess?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MessageProcess
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??NETState_Process?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    NETState_Process
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant " Sys is ready\\r\\n">`:
+        DB " Sys is ready\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+`?<Constant "^">`:
+        DB "^"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant "S:1">`:
+        DB "S:1"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "S:1\\r\\n">`:
+        DB "S:1\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+`?<Constant "H:1">`:
+        DB "H:1"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "H:1\\r\\n">`:
+        DB "H:1\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "OK\\r\\n">`:
+        DB "OK\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "This is Coordinator\\r\\n">`:
+        DB "This is Coordinator\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "This is Route\\r\\n">`:
+        DB "This is Route\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "This is EndDevice\\r\\n">`:
+        DB "This is EndDevice\015\012"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1c200:
+        DD 115200
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3f800000:
+        DD 3F800000H
+
+        END
+// 
+// 251 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+//   1 byte  in segment SFR_AN
+// 109 bytes in segment XDATA_ROM_C
+//   2 bytes in segment XDATA_Z
+// 
+// 287 bytes of CODE  memory
+// 101 bytes of CONST memory (+ 8 bytes shared)
+//   0 bytes of DATA  memory (+ 1 byte  shared)
+//   2 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

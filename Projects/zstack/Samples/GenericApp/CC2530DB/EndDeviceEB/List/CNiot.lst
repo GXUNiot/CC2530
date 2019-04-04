@@ -1,0 +1,843 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Mar/2019  12:36:29 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c                 #
+#    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)    #
+#                          -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c" -D             #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D             #
+#                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\20190310 #
+#                          A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\EndDeviceEB\List\" -lA            #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\CNiot\Desktop\20190310A   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\" -e --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\CNiot\Desktop\20 #
+#                          190310A ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\SOURCE\" -I                      #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
+#                          CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
+#                          UDE\" -I "C:\Users\CNiot\Desktop\20190310A         #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
+#                          I\" -I "C:\Users\CNiot\Desktop\20190310A           #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SADDR\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SDATA\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_ #
+#                          LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\SINGLE_CHIP\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\" -I           #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\"   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\CNiot.lst          #
+#    Object file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          ∑¿ª∑¿µ¡œµÕ≥\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\CNiot.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\CNiot\Desktop\20190310A ∑¿ª∑¿µ¡œµÕ≥\Project\CNiot\CNiot.c
+      1          #include "CNiot.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+      2          
+      3          
+      4          
+      5          #define SMOKE
+      6          #define HUMIR
+      7          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          char* IC_UID;
+   \                     IC_UID:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+      9          
+     10          void Flash(void);
+     11          
+     12          #ifdef ZDO_COORDINATOR
+     13          
+     14          void InitKeyINT(void);
+     15          void KEY1_Callback(void);
+     16          
+     17          enum SECURITY_STATE{CLOSE,WAIT,OPEN}Security;
+     18          enum ALERT_STATE{NORMAL,ALERT,WARNING,DANGER}Alert; //ÂÖ•‰æµÊä•Ë≠¶WARNING ÁÅ´ÁÅæÁÉüÈõæDANGER
+     19          
+     20          //ÂÆâ‰øùÂºÄÂêØÂÄíËÆ°Á®ãÂ∫è
+     21          uint8_t SecurityOpenCountdown_TASKID;
+     22          void SecurityOpenCountdown(void);
+     23          
+     24          
+     25          //ÂÖ•‰æµÊä•Ë≠¶ÂÄíËÆ°Êó∂
+     26          uint8_t AlertWarningCountdown_TASKID;
+     27          void AlertWarningCountdown(void);
+     28          
+     29          //Âç°Âè∑
+     30          #define ADMIN_IC_MUN  2
+     31          #define ADMIN_UID_NUM 8
+     32          const char ADMIN_IC[ADMIN_IC_MUN][ADMIN_UID_NUM] = {
+     33          {'9','A','F','4','A','0','1','0'},
+     34          {'C','6','2','7','F','1','8','0'}
+     35          };
+     36          
+     37          //ËúÇÈ∏£Âô®
+     38          #define BEEP      P0_0
+     39          #define BEEP_ON   1
+     40          #define BEEP_OFF  0
+     41          uint8_t BEEP_RUN_FLAG;
+     42          
+     43          //Èó®Á£Å
+     44          #define DOOR        P1_5
+     45          #define DOOR_OPEN   1
+     46          #define DOOR_CLOSE  0
+     47          
+     48          #else
+     49          
+     50          #ifdef SMOKE
+     51          #define SMOKE_AO  P0_0
+     52          #define SMOKE_DO  P1_5
+     53          #endif
+     54          
+     55          #ifdef HUMIR
+     56          #define HUMIR_IO  P1_3
+     57          #endif
+     58          
+     59          #endif 
+     60          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          void setup(void)
+   \                     setup:
+     62          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     63            Init_Serial(1,115200);
+   \   000004                ; Setup parameters for call to function Init_Serial
+   \   000004   90....       MOV     DPTR,#__Constant_1c200
+   \   000007   12....       LCALL   ?XLOAD_R2345
+   \   00000A   7901         MOV     R1,#0x1
+   \   00000C   12....       LCALL   ??Init_Serial?relay
+     64          
+     65            //ÂàùÂßãÂåñT4Áî®‰∫éÊîØÊåÅ TimeOut
+     66            T4_Init();
+   \   00000F                ; Setup parameters for call to function T4_Init
+   \   00000F   12....       LCALL   ??T4_Init?relay
+     67          
+     68            Ticker(Flash,1);
+   \   000012                ; Setup parameters for call to function Ticker
+   \   000012   90....       MOV     DPTR,#__Constant_3f800000
+   \   000015   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000018   7A..         MOV     R2,#??Flash?relay & 0xff
+   \   00001A   7B..         MOV     R3,#(??Flash?relay >> 8) & 0xff
+   \   00001C   12....       LCALL   ??Ticker?relay
+   \   00001F   7404         MOV     A,#0x4
+   \   000021   12....       LCALL   ?DEALLOC_XSTACK8
+     69          
+     70            //ÂàùÂßãÂåñLED
+     71            PinMode(P1_0,OUTPUT);
+   \   000024                ; Setup parameters for call to function fPinMode
+   \   000024   7908         MOV     R1,#0x8
+   \   000026   7A01         MOV     R2,#0x1
+   \   000028   7B02         MOV     R3,#0x2
+   \   00002A   12....       LCALL   ??fPinMode?relay
+     72            PinMode(P1_1,OUTPUT);
+   \   00002D                ; Setup parameters for call to function fPinMode
+   \   00002D   7908         MOV     R1,#0x8
+   \   00002F   7A02         MOV     R2,#0x2
+   \   000031   7B02         MOV     R3,#0x2
+   \   000033   12....       LCALL   ??fPinMode?relay
+     73            PinMode(P1_4,OUTPUT);
+   \   000036                ; Setup parameters for call to function fPinMode
+   \   000036   7908         MOV     R1,#0x8
+   \   000038   7A10         MOV     R2,#0x10
+   \   00003A   7B02         MOV     R3,#0x2
+   \   00003C   12....       LCALL   ??fPinMode?relay
+     74          
+     75          #ifdef ZDO_COORDINATOR
+     76          
+     77            //ÂàùÂßãÂåñËúÇÈ∏£Âô®
+     78            PinMode(P0_0,OUTPUT);
+     79            BEEP = BEEP_OFF;
+     80            BEEP_RUN_FLAG = 0;
+     81          
+     82            //ÂàùÂßãÂåñÈó®Á£Å
+     83            PinMode(P1_5,INPUT_UP);
+     84            
+     85          
+     86            IC_Init();
+     87          
+     88            OLED_Init();                      //oled ÂàùÂßãÂåñ  
+     89            OLED_CLS();                      //Â±èÂÖ®‰∫Æ 
+     90            //OLED_welcome();
+     91            OLED_P8x16Str(0, 0, "Security System");   //ÊòæÁ§∫Âú®Á¨¨‰∏ÄË°å
+     92            OLED_P8x16Str(0, 2, "Security:CLOSE");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+     93            OLED_P8x16Str(0, 4, "Alert:NORMAL");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+     94            OLED_P8x16Str(0, 6, "2019-03-30");     //ÊòæÁ§∫Âú®Á¨¨ÂõõË°å
+     95          
+     96            //ÂàùÂßãÂåñKEY
+     97            attachInterrupt(P0_1,KEY1_Callback,FALL);//‰ΩøÁî®ÊåâÈîÆ1ÂºÄÂêØÂÆâÈò≤
+     98          
+     99            LED2 = LED2_OFF;
+    100            Security = CLOSE;  //ÂÆâ‰øùÂÖ≥Èó≠
+    101          
+    102            Alert = NORMAL;     //Ë≠¶ÊàíÊ≠£Â∏∏
+    103          #else
+    104          
+    105          
+    106          #ifdef SMOKE
+    107            PinMode(P1_5,INPUT_UP);
+   \   00003F                ; Setup parameters for call to function fPinMode
+   \   00003F   7901         MOV     R1,#0x1
+   \   000041   7A20         MOV     R2,#0x20
+   \   000043   7B02         MOV     R3,#0x2
+   \   000045   12....       LCALL   ??fPinMode?relay
+    108          #endif
+    109          
+    110          #ifdef HUMIR
+    111            PinMode(P1_3,INPUT_DOWN);
+   \   000048                ; Setup parameters for call to function fPinMode
+   \   000048   7902         MOV     R1,#0x2
+   \   00004A   7A08         MOV     R2,#0x8
+   \   00004C   7B02         MOV     R3,#0x2
+   \   00004E   12....       LCALL   ??fPinMode?relay
+    112          #endif
+    113          
+    114          
+    115          #endif 
+    116          
+    117            Printf(0," Sys is ready\r\n");
+   \   000051                ; Setup parameters for call to function Printf
+   \   000051   7A..         MOV     R2,#`?<Constant " Sys is ready\\r\\n">` & 0xff
+   \   000053   7B..         MOV     R3,#(`?<Constant " Sys is ready\\r\\n">` >> 8) & 0xff
+   \   000055   7900         MOV     R1,#0x0
+   \   000057   12....       LCALL   ??Printf?relay
+    118          }
+   \   00005A                REQUIRE ?Subroutine0
+   \   00005A                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    119          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    120          void loop(void)
+   \                     loop:
+    121          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    122          #ifdef ZDO_COORDINATOR
+    123            uint8_t i,j,flag;
+    124            
+    125            IC_UID = IC_ReadUID();
+    126            if( IC_UID != NULL )
+    127            {
+    128              Printf(0,"UID:%s\r\n",IC_UID);
+    129              for(i=0; i<ADMIN_IC_MUN; i++)
+    130              {
+    131                flag = 1;
+    132          
+    133                for(j=0; j<ADMIN_UID_NUM; j++)
+    134                  if( IC_UID[j] != ADMIN_IC[i][j] )
+    135                    flag = 0;
+    136          
+    137                if( flag )
+    138                {
+    139                  if( Security == OPEN )
+    140                  {
+    141                    Security = CLOSE;
+    142                    Alert = NORMAL;
+    143                    BEEP_RUN_FLAG = 0;
+    144                    BEEP = BEEP_OFF;
+    145                    Printf(0,"Security Close\r\n");
+    146                    OLED_P8x16Str(0, 2, "Security:CLOSE");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+    147                    OLED_P8x16Str(0, 4, "Alert:NORMAL ");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+    148                  }
+    149                }
+    150                
+    151              }
+    152              IC_UID = NULL;
+    153            }
+    154              
+    155          
+    156          
+    157            if( Security == OPEN )
+    158            {
+    159          
+    160              if( DOOR == DOOR_OPEN && Alert == NORMAL  )
+    161              {
+    162                if( DOOR == DOOR_OPEN ) 
+    163                {
+    164                  Alert = ALERT;
+    165                  AlertWarningCountdown_TASKID = Ticker(AlertWarningCountdown,1);
+    166                }
+    167              }
+    168            }
+    169          #else 
+    170          
+    171          
+    172          
+    173          #endif 
+    174          }
+   \   000000   02....       LJMP    ?BRET
+    175          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    176          void Flash(void)
+   \                     Flash:
+    177          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    178            LED1 = !LED1;
+   \   000004   D2F0         SETB    B.0
+   \   000006   A290         MOV     C,0x90.0
+   \   000008   30F001       JNB     B.0,??Flash_0
+   \   00000B   B3           CPL     C
+   \                     ??Flash_0:
+   \   00000C   9290         MOV     0x90.0,C
+    179            Printf(0,"^");
+   \   00000E                ; Setup parameters for call to function Printf
+   \   00000E   7A..         MOV     R2,#`?<Constant "^">` & 0xff
+   \   000010   7B..         MOV     R3,#(`?<Constant "^">` >> 8) & 0xff
+   \   000012   7900         MOV     R1,#0x0
+   \   000014   12....       LCALL   ??Printf?relay
+    180          
+    181          #ifdef ZDO_COORDINATOR
+    182            if( BEEP_RUN_FLAG )
+    183            {
+    184              BEEP = !BEEP;
+    185            }
+    186          #else
+    187          
+    188          #ifdef SMOKE
+    189          
+    190            if( SMOKE_DO == 0 )
+   \   000017   A295         MOV     C,0x90.5
+   \   000019   4018         JC      ??Flash_1
+    191            {
+    192              if( SMOKE_DO == 0 )
+   \   00001B   A295         MOV     C,0x90.5
+   \   00001D   4014         JC      ??Flash_1
+    193              {
+    194                SendPoint(0x0000,"S:1");
+   \   00001F                ; Setup parameters for call to function SendPoint
+   \   00001F   7C..         MOV     R4,#`?<Constant "S:1">` & 0xff
+   \   000021   7D..         MOV     R5,#(`?<Constant "S:1">` >> 8) & 0xff
+   \   000023   7A00         MOV     R2,#0x0
+   \   000025   7B00         MOV     R3,#0x0
+   \   000027   12....       LCALL   ??SendPoint?relay
+    195                Printf(0,"S:1\r\n");
+   \   00002A                ; Setup parameters for call to function Printf
+   \   00002A   7A..         MOV     R2,#`?<Constant "S:1\\r\\n">` & 0xff
+   \   00002C   7B..         MOV     R3,#(`?<Constant "S:1\\r\\n">` >> 8) & 0xff
+   \   00002E   7900         MOV     R1,#0x0
+   \   000030   12....       LCALL   ??Printf?relay
+    196              }
+    197            }
+    198            
+    199          #endif
+    200          
+    201          #ifdef HUMIR
+    202            
+    203            if( HUMIR_IO == 1 )
+   \                     ??Flash_1:
+   \   000033   A293         MOV     C,0x90.3
+   \   000035   5018         JNC     ??Flash_2
+    204            {
+    205              if( HUMIR_IO == 1 )
+   \   000037   A293         MOV     C,0x90.3
+   \   000039   5014         JNC     ??Flash_2
+    206              {
+    207                SendPoint(0x0000,"H:1");
+   \   00003B                ; Setup parameters for call to function SendPoint
+   \   00003B   7C..         MOV     R4,#`?<Constant "H:1">` & 0xff
+   \   00003D   7D..         MOV     R5,#(`?<Constant "H:1">` >> 8) & 0xff
+   \   00003F   7A00         MOV     R2,#0x0
+   \   000041   7B00         MOV     R3,#0x0
+   \   000043   12....       LCALL   ??SendPoint?relay
+    208                Printf(0,"H:1\r\n");
+   \   000046                ; Setup parameters for call to function Printf
+   \   000046   7A..         MOV     R2,#`?<Constant "H:1\\r\\n">` & 0xff
+   \   000048   7B..         MOV     R3,#(`?<Constant "H:1\\r\\n">` >> 8) & 0xff
+   \   00004A   7900         MOV     R1,#0x0
+   \   00004C   12....       LCALL   ??Printf?relay
+    209              }
+    210            }
+    211          
+    212          #endif
+    213          
+    214          #endif
+    215          }
+   \                     ??Flash_2:
+   \   00004F   80..         SJMP    ?Subroutine0
+   \   000051                REQUIRE _A_P1
+    216          
+    217          #ifdef ZDO_COORDINATOR
+    218          
+    219          void KEY1_Callback(void)
+    220          {
+    221            while(KEY1);//Á≠âÂæÖÊåâÈîÆÁ®≥ÂÆö
+    222          
+    223            if( Security == CLOSE )
+    224            {
+    225              Security = WAIT;
+    226              SecurityOpenCountdown_TASKID = Ticker(SecurityOpenCountdown,1);
+    227              Printf(0,"Security Wait\r\n");
+    228              OLED_P8x16Str(0, 2, "Security: Wait");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+    229            }
+    230          
+    231          }
+    232          
+    233          //ÂÆâÈò≤ÂºÄÂêØÂÄíËÆ°Êó∂
+    234          void SecurityOpenCountdown(void)
+    235          { 
+    236            static uint8_t OpenCountdown = 10;
+    237            
+    238            LED2 = !LED2;
+    239            BEEP = BEEP_ON;
+    240            Printf(0,"Security Warning %d\r\n",OpenCountdown);
+    241            if( --OpenCountdown <= 0 && Security == WAIT )
+    242            {
+    243              TickerDel(SecurityOpenCountdown_TASKID);
+    244              LED2 = LED2_ON;
+    245              Security = OPEN;
+    246              OpenCountdown = 10;
+    247              Printf(0,"Security Open\r\n");
+    248              OLED_P8x16Str(0, 2, "Security: OPEN");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+    249            }
+    250            BEEP = BEEP_OFF;
+    251          }
+    252          
+    253          //ÂÖ•‰æµÊä•Ë≠¶ÂÄíËÆ°Êó∂
+    254          void AlertWarningCountdown(void)
+    255          {
+    256            static uint8_t WarningCountdown = 10;
+    257            
+    258            LED2 = !LED2;
+    259            BEEP = BEEP_ON;
+    260            Printf(0,"WARNING Wait %d\r\n",WarningCountdown);
+    261            if( --WarningCountdown <= 0 && Alert == ALERT )
+    262            {
+    263              TickerDel(AlertWarningCountdown_TASKID);
+    264              LED2 = LED2_ON;
+    265              Alert = WARNING;
+    266              BEEP_RUN_FLAG = 1;
+    267              WarningCountdown = 10;
+    268              Printf(0,"Alert WARNING\r\n");
+    269              OLED_P8x16Str(0, 4, "Alert:WARNING");  //ÊòæÁ§∫Âú®Á¨¨‰∏âË°å
+    270            }
+    271            BEEP = BEEP_OFF;
+    272          }
+    273          
+    274          #else
+    275          
+    276          #endif
+    277          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    278          void Serial_CallBack(uint8_t port, uint8_t* buf)
+   \                     Serial_CallBack:
+    279          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    280            Printf(port,"OK\r\n");
+   \   000005                ; Setup parameters for call to function Printf
+   \   000005   7A..         MOV     R2,#`?<Constant "OK\\r\\n">` & 0xff
+   \   000007   7B..         MOV     R3,#(`?<Constant "OK\\r\\n">` >> 8) & 0xff
+   \   000009   12....       LCALL   ??Printf?relay
+    281          }
+   \   00000C                REQUIRE ?Subroutine1
+   \   00000C                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    282          
+    283          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    284          void MessageProcess(uint16_t addr, uint8_t *data)
+   \                     MessageProcess:
+    285          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    286            LED3 =!LED3;
+   \   000000   D2F0         SETB    B.0
+   \   000002   A294         MOV     C,0x90.4
+   \   000004   30F001       JNB     B.0,??MessageProcess_0
+   \   000007   B3           CPL     C
+   \                     ??MessageProcess_0:
+   \   000008   9294         MOV     0x90.4,C
+    287          #ifdef ZDO_COORDINATOR
+    288            char data_name[8];
+    289            int data_value=0;
+    290          
+    291            Printf(0,"Receive:%d>_%s\r\n",addr,data);
+    292          
+    293            if( sscanf((const char*)data,"%s,%d",data_name,data_value) ==2 )
+    294            {
+    295              if( Security == OPEN )
+    296              {
+    297                if( data_name[0] == 'S' )
+    298                  if( data_value == 1 )
+    299                    Alert = DANGER;
+    300          
+    301                if( data_name[0] == 'H' )
+    302                  if( data_value == 1 )
+    303                    Alert = WARNING;
+    304              }
+    305            }
+    306          
+    307          #else
+    308          
+    309            
+    310          #endif
+    311          }
+   \   00000A   02....       LJMP    ?BRET
+   \   00000D                REQUIRE _A_P1
+    312          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    313          void NETState_Process(devStates_t devState)
+   \                     NETState_Process:
+    314          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    315            switch (devState)
+   \   000006   24FA         ADD     A,#-0x6
+   \   000008   6013         JZ      ??NETState_Process_0
+   \   00000A   14           DEC     A
+   \   00000B   600A         JZ      ??NETState_Process_1
+   \   00000D   24FE         ADD     A,#-0x2
+   \   00000F   7015         JNZ     ??NETState_Process_2
+    316            {
+    317              //‰Ωú‰∏∫ÂçèË∞É   
+    318              case DEV_ZB_COORD:    Printf(0,"This is Coordinator\r\n");
+   \   000011                ; Setup parameters for call to function Printf
+   \   000011   7A..         MOV     R2,#`?<Constant "This is Coordinator\\r\\n">` & 0xff
+   \   000013   7B..         MOV     R3,#(`?<Constant "This is Coordinator\\r\\n">` >> 8) & 0xff
+   \   000015   800A         SJMP    ??NETState_Process_3
+    319                break;
+    320              //‰Ωú‰∏∫Ë∑ØÁî±
+    321              case DEV_ROUTER:      Printf(0,"This is Route\r\n");
+   \                     ??NETState_Process_1:
+   \   000017                ; Setup parameters for call to function Printf
+   \   000017   7A..         MOV     R2,#`?<Constant "This is Route\\r\\n">` & 0xff
+   \   000019   7B..         MOV     R3,#(`?<Constant "This is Route\\r\\n">` >> 8) & 0xff
+   \   00001B   8004         SJMP    ??NETState_Process_3
+    322                break;
+    323              //‰Ωú‰∏∫ÁªàÁ´Ø
+    324              case DEV_END_DEVICE:  Printf(0,"This is EndDevice\r\n");
+   \                     ??NETState_Process_0:
+   \   00001D                ; Setup parameters for call to function Printf
+   \   00001D   7A..         MOV     R2,#`?<Constant "This is EndDevice\\r\\n">` & 0xff
+   \   00001F   7B..         MOV     R3,#(`?<Constant "This is EndDevice\\r\\n">` >> 8) & 0xff
+   \                     ??NETState_Process_3:
+   \   000021   7900         MOV     R1,#0x0
+   \   000023   12....       LCALL   ??Printf?relay
+    325                                    
+    326                break;
+    327          
+    328              default:
+    329                break;
+    330            }
+    331          }
+   \                     ??NETState_Process_2:
+   \   000026   80..         SJMP    ?Subroutine1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??setup?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    setup
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??loop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    loop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Flash?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Flash
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Serial_CallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Serial_CallBack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MessageProcess?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MessageProcess
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??NETState_Process?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    NETState_Process
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant " Sys is ready\\r\\n">`:
+   \   000000   20537973     DB " Sys is ready\015\012"
+   \            20697320
+   \            72656164
+   \            790D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "^">`:
+   \   000000   5E00         DB "^"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "S:1">`:
+   \   000000   533A3100     DB "S:1"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "S:1\\r\\n">`:
+   \   000000   533A310D     DB "S:1\015\012"
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "H:1">`:
+   \   000000   483A3100     DB "H:1"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "H:1\\r\\n">`:
+   \   000000   483A310D     DB "H:1\015\012"
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "OK\\r\\n">`:
+   \   000000   4F4B0D0A     DB "OK\015\012"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "This is Coordinator\\r\\n">`:
+   \   000000   54686973     DB "This is Coordinator\015\012"
+   \            20697320
+   \            436F6F72
+   \            64696E61
+   \            746F720D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "This is Route\\r\\n">`:
+   \   000000   54686973     DB "This is Route\015\012"
+   \            20697320
+   \            526F7574
+   \            650D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "This is EndDevice\\r\\n">`:
+   \   000000   54686973     DB "This is EndDevice\015\012"
+   \            20697320
+   \            456E6444
+   \            65766963
+   \            650D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1c200:
+   \   000000   00C20100     DD 115200
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f800000:
+   \   000000   0000803F     DD 3F800000H
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     Flash                2      0      0
+       -> Printf          4      0      0
+       -> SendPoint       4      0      0
+       -> Printf          4      0      0
+       -> SendPoint       4      0      0
+       -> Printf          4      0      0
+     MessageProcess       0      0      0
+     NETState_Process     0      0      9
+       -> Printf          0      0     18
+       -> Printf          0      0     18
+       -> Printf          0      0     18
+     Serial_CallBack      0      0      9
+       -> Printf          0      0     18
+     loop                 0      0      0
+     setup                2      0      4
+       -> Init_Serial     4      0      0
+       -> T4_Init         4      0      0
+       -> Ticker          4      0      8
+       -> fPinMode        4      0      0
+       -> fPinMode        4      0      0
+       -> fPinMode        4      0      0
+       -> fPinMode        4      0      0
+       -> fPinMode        4      0      0
+       -> Printf          4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     _A_P1                                    1
+     IC_UID                                   2
+     setup                                   90
+     ?Subroutine0                             7
+     loop                                     3
+     Flash                                   81
+     Serial_CallBack                         12
+     ?Subroutine1                             5
+     MessageProcess                          13
+     NETState_Process                        40
+     ??setup?relay                            6
+     ??loop?relay                             6
+     ??Flash?relay                            6
+     ??Serial_CallBack?relay                  6
+     ??MessageProcess?relay                   6
+     ??NETState_Process?relay                 6
+     ?<Constant " Sys is ready\r\n">         16
+     ?<Constant "^">                          2
+     ?<Constant "S:1">                        4
+     ?<Constant "S:1\r\n">                    6
+     ?<Constant "H:1">                        4
+     ?<Constant "H:1\r\n">                    6
+     ?<Constant "OK\r\n">                     5
+     ?<Constant "This is Coordinator\r\n">   22
+     ?<Constant "This is Route\r\n">         16
+     ?<Constant "This is EndDevice\r\n">     20
+     __Constant_1c200                         4
+     __Constant_3f800000                      4
+
+ 
+ 251 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+ 109 bytes in segment XDATA_ROM_C
+   2 bytes in segment XDATA_Z
+ 
+ 287 bytes of CODE  memory
+ 101 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 1 byte  shared)
+   2 bytes of XDATA memory
+
+Errors: none
+Warnings: none

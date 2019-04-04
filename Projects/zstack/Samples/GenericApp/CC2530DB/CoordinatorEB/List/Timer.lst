@@ -1,0 +1,945 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Mar/2019  15:40:46 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\CNiot\CC2530_API\Timer.c      #
+#    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func                  #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\CNiot\CC2530_API\Timer.c" -D  #
+#                          CNIOT -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D     #
+#                          MT_ZDO_FUNC -lC "C:\Users\CNiot\Desktop\20190310A  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\CoordinatorEB\List\" -lA            #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\CoordinatorEB\List\"                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\CoordinatorEB\Obj\" -e --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\CNiot\Desktop\20 #
+#                          190310A 防火防盗系统\Project\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\SOURCE\" -I                      #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
+#                          CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
+#                          UDE\" -I "C:\Users\CNiot\Desktop\20190310A         #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
+#                          I\" -I "C:\Users\CNiot\Desktop\20190310A           #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SADDR\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SDATA\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_ #
+#                          LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\SINGLE_CHIP\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\" -I           #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\"   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\CoordinatorEB\List\Timer.lst        #
+#    Object file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\CoordinatorEB\Obj\Timer.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\CNiot\Desktop\20190310A 防火防盗系统\Project\CNiot\CC2530_API\Timer.c
+      1          #include "Timer.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xeb
+   \   unsigned char volatile __sfr T4CTL
+   \                     T4CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xed
+   \   unsigned char volatile __sfr T4CC0
+   \                     T4CC0:
+   \   000000                DS 1
+      2          #include <ioCC2530.h>
+      3          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      4          TIMEOUTTask TimeoutTask[TIMEOUT_TASK_MAX] = {{0,0,NULL}};
+   \                     TimeoutTask:
+   \   000000                DS 56
+   \   000038                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      5          TICKERTask  TickerTask[TICKER_TASK_MAX]   = {{0,0,NULL}};
+   \                     TickerTask:
+   \   000000                DS 80
+   \   000050                REQUIRE __INIT_XDATA_Z
+      6          
+      7          /****************************************
+      8           * 函数名： T4_Init
+      9           * 功能：   初始化定时器4
+     10           *      
+     11           * 参数:    void
+     12           *      
+     13           * 返回值： void
+     14          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     15          void T4_Init(void)
+   \                     T4_Init:
+     16          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     17              T4CTL &= ~(0xFF);
+   \   000000   75EB00       MOV     0xeb,#0x0
+     18            
+     19            //T4CTL |= 0x01<<5;   //2
+     20            //T4CTL |= 0x02<<5;   //4
+     21            //T4CTL |= 0x03<<5;   //8
+     22            //T4CTL |= 0x04<<5;   //16
+     23            //T4CTL |= 0x05<<5;   //32
+     24            T4CTL |= 0x06<<5;   //64
+   \   000003   43EBC0       ORL     0xeb,#0xc0
+     25            //T4CTL |= 0x07<<5;   //128
+     26            T4CTL |= 0x08;
+   \   000006   43EB08       ORL     0xeb,#0x8
+     27            T4CTL |= 0x03;
+   \   000009   43EB03       ORL     0xeb,#0x3
+     28              
+     29            T4IE = 1;
+   \   00000C   D2BC         SETB    0xb8.4
+     30            T4CC0 = 250;
+   \   00000E   75EDFA       MOV     0xed,#-0x6
+     31            T4CTL |= 0x10;
+   \   000011   43EB10       ORL     0xeb,#0x10
+     32            EA = 1;
+   \   000014   D2AF         SETB    0xa8.7
+     33          }
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE T4CTL
+   \   000019                REQUIRE _A_IEN1
+   \   000019                REQUIRE T4CC0
+   \   000019                REQUIRE _A_IEN0
+     34          
+     35          /****************************************
+     36           * 函数名： TimeOut
+     37           * 功能：   定时调用函数
+     38           *      
+     39           * 参数:    *fun-函数指针 timeout-延时ms
+     40           *      
+     41           * 返回值： uint8_t 函数队列序号
+     42          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     43          uint8_t Timeout(void (*fun)(void),float timeout)
+   \                     Timeout:
+     44          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   7410         MOV     A,#0x10
+   \   00000B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000E   78..         MOV     R0,#?V0 + 0
+   \   000010   12....       LCALL   ?L_MOV_X
+     45            uint8_t i;
+     46            
+     47            if( !(T4CTL&0x10) )
+   \   000013   E5EB         MOV     A,0xeb
+   \   000015   A2E4         MOV     C,0xE0 /* A   */.4
+   \   000017   4003         JC      ??Timeout_0
+     48            {
+     49              T4_Init();
+   \   000019                ; Setup parameters for call to function T4_Init
+   \   000019   12....       LCALL   ??T4_Init?relay
+     50            }
+     51            
+     52            for(i=0; i<TIMEOUT_TASK_MAX; i++)
+   \                     ??Timeout_0:
+   \   00001C   7A00         MOV     R2,#0x0
+     53            {
+     54              if( TimeoutTask[i].flag ==0 )
+   \                     ??Timeout_1:
+   \   00001E   EA           MOV     A,R2
+   \   00001F   75F007       MOV     B,#0x7
+   \   000022   A4           MUL     AB
+   \   000023   F8           MOV     R0,A
+   \   000024   A9F0         MOV     R1,B
+   \   000026   74..         MOV     A,#TimeoutTask & 0xff
+   \   000028   28           ADD     A,R0
+   \   000029   FC           MOV     R4,A
+   \   00002A   74..         MOV     A,#(TimeoutTask >> 8) & 0xff
+   \   00002C   39           ADDC    A,R1
+   \   00002D   FD           MOV     R5,A
+   \   00002E   8C82         MOV     DPL,R4
+   \   000030   8D83         MOV     DPH,R5
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   7036         JNZ     ??Timeout_2
+     55              {
+     56                TimeoutTask[i].flag = 1;
+   \   000035   7401         MOV     A,#0x1
+   \   000037   F0           MOVX    @DPTR,A
+     57                TimeoutTask[i].count = (uint32_t)timeout*1000;
+   \   000038   78..         MOV     R0,#?V0 + 0
+   \   00003A   12....       LCALL   ?FLT_TO_UL
+   \   00003D   90....       MOV     DPTR,#__Constant_3e8
+   \   000040   78..         MOV     R0,#?V0 + 4
+   \   000042   12....       LCALL   ?L_MOV_X
+   \   000045   78..         MOV     R0,#?V0 + 0
+   \   000047   79..         MOV     R1,#?V0 + 4
+   \   000049   12....       LCALL   ?L_MUL
+   \   00004C   8C82         MOV     DPL,R4
+   \   00004E   8D83         MOV     DPH,R5
+   \   000050   A3           INC     DPTR
+   \   000051   78..         MOV     R0,#?V0 + 0
+   \   000053   12....       LCALL   ?L_MOV_TO_X
+     58                TimeoutTask[i].callback = fun;
+   \   000056   8C82         MOV     DPL,R4
+   \   000058   8D83         MOV     DPH,R5
+   \   00005A   A3           INC     DPTR
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   EE           MOV     A,R6
+   \   000060   F0           MOVX    @DPTR,A
+   \   000061   A3           INC     DPTR
+   \   000062   EF           MOV     A,R7
+   \   000063   F0           MOVX    @DPTR,A
+     59                return i+1;
+   \   000064   7401         MOV     A,#0x1
+   \   000066   2A           ADD     A,R2
+   \   000067   F9           MOV     R1,A
+     60              }
+   \                     ??Timeout_3:
+   \   000068   02....       LJMP    ?Subroutine0 & 0xFFFF
+     61              else if( i == 15 )
+   \                     ??Timeout_2:
+   \   00006B   740F         MOV     A,#0xf
+   \   00006D   6A           XRL     A,R2
+   \   00006E   7004         JNZ     ??Timeout_4
+     62              {
+     63                return 0;
+   \                     ??Timeout_5:
+   \   000070   7900         MOV     R1,#0x0
+   \   000072   80F4         SJMP    ??Timeout_3
+     64              }
+     65            }
+   \                     ??Timeout_4:
+   \   000074   0A           INC     R2
+   \   000075   EA           MOV     A,R2
+   \   000076   C3           CLR     C
+   \   000077   9408         SUBB    A,#0x8
+   \   000079   50F5         JNC     ??Timeout_5
+   \   00007B   80A1         SJMP    ??Timeout_1
+   \   00007D                REQUIRE T4CTL
+     66            return 0;
+     67          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F08         MOV     R7,#0x8
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     68          
+     69          /****************************************
+     70           * 函数名： TimeOutDel
+     71           * 功能：   解除函数定时调用
+     72           *      
+     73           * 参数:    index-函数队列序号
+     74           *      
+     75           * 返回值： 0-失败 1-成功
+     76          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     77          uint8_t TimeoutDel(uint8_t index)
+   \                     TimeoutDel:
+     78          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     79            if( TimeoutTask[index-1].flag )
+   \   000006   75F007       MOV     B,#0x7
+   \   000009   A4           MUL     AB
+   \   00000A   F8           MOV     R0,A
+   \   00000B   A9F0         MOV     R1,B
+   \   00000D   74..         MOV     A,#TimeoutTask & 0xff
+   \   00000F   28           ADD     A,R0
+   \   000010   F8           MOV     R0,A
+   \   000011   74..         MOV     A,#(TimeoutTask >> 8) & 0xff
+   \   000013   39           ADDC    A,R1
+   \   000014   F9           MOV     R1,A
+   \   000015   E8           MOV     A,R0
+   \   000016   24F9         ADD     A,#-0x7
+   \   000018   F582         MOV     DPL,A
+   \   00001A   E9           MOV     A,R1
+   \   00001B   34FF         ADDC    A,#-0x1
+   \   00001D   F583         MOV     DPH,A
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   601E         JZ      ??TimeoutDel_0
+     80            {
+     81              TimeoutTask[index-1].count = 0;
+   \   000022   90....       MOV     DPTR,#__Constant_0
+   \   000025   12....       LCALL   ?XLOAD_R2345
+   \   000028   E8           MOV     A,R0
+   \   000029   24FA         ADD     A,#-0x6
+   \   00002B   F582         MOV     DPL,A
+   \   00002D   E9           MOV     A,R1
+   \   00002E   34FF         ADDC    A,#-0x1
+   \   000030   F583         MOV     DPH,A
+   \   000032   12....       LCALL   ?XSTORE_R2345
+     82              TimeoutTask[index-1].callback = NULL;
+   \   000035   E8           MOV     A,R0
+   \   000036   24FE         ADD     A,#-0x2
+   \   000038   F582         MOV     DPL,A
+   \   00003A   E9           MOV     A,R1
+   \   00003B   12....       LCALL   ?Subroutine1 & 0xFFFF
+     83              return 1;
+     84            }
+   \                     ??CrossCallReturnLabel_0:
+   \   00003E   8002         SJMP    ??TimeoutDel_1
+     85            return 0;
+   \                     ??TimeoutDel_0:
+   \   000040   7900         MOV     R1,#0x0
+   \                     ??TimeoutDel_1:
+   \   000042   7F01         MOV     R7,#0x1
+   \   000044   02....       LJMP    ?BANKED_LEAVE_XDATA
+     86          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   34FF         ADDC    A,#-0x1
+   \   000002   F583         MOV     DPH,A
+   \   000004   E4           CLR     A
+   \   000005   F0           MOVX    @DPTR,A
+   \   000006   A3           INC     DPTR
+   \   000007   F0           MOVX    @DPTR,A
+   \   000008   7901         MOV     R1,#0x1
+   \   00000A   22           RET
+     87          
+     88          /****************************************
+     89           * 函数名： Ticker
+     90           * 功能：   定时调用函数
+     91           *      
+     92           * 参数:    *fun-函数指针 timeout-延时ms
+     93           *      
+     94           * 返回值： uint8_t 函数队列序号
+     95          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     96          uint8_t Ticker(void (*fun)(void),float timeout)
+   \                     Ticker:
+     97          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   7410         MOV     A,#0x10
+   \   00000B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000E   78..         MOV     R0,#?V0 + 0
+   \   000010   12....       LCALL   ?L_MOV_X
+     98            uint8_t i;
+     99            
+    100            if( !(T4CTL&0x10) )
+   \   000013   E5EB         MOV     A,0xeb
+   \   000015   A2E4         MOV     C,0xE0 /* A   */.4
+   \   000017   4003         JC      ??Ticker_0
+    101            {
+    102              T4_Init();
+   \   000019                ; Setup parameters for call to function T4_Init
+   \   000019   12....       LCALL   ??T4_Init?relay
+    103            }
+    104            
+    105            for(i=0; i<TICKER_TASK_MAX; i++)
+   \                     ??Ticker_0:
+   \   00001C   7C00         MOV     R4,#0x0
+    106            {
+    107              if( TickerTask[i].reload ==0 )
+   \                     ??Ticker_1:
+   \   00001E   EC           MOV     A,R4
+   \   00001F   75F00A       MOV     B,#0xa
+   \   000022   A4           MUL     AB
+   \   000023   F8           MOV     R0,A
+   \   000024   A9F0         MOV     R1,B
+   \   000026   74..         MOV     A,#TickerTask & 0xff
+   \   000028   28           ADD     A,R0
+   \   000029   FA           MOV     R2,A
+   \   00002A   74..         MOV     A,#(TickerTask >> 8) & 0xff
+   \   00002C   39           ADDC    A,R1
+   \   00002D   FB           MOV     R3,A
+   \   00002E   8A82         MOV     DPL,R2
+   \   000030   8B83         MOV     DPH,R3
+   \   000032   78..         MOV     R0,#?V0 + 4
+   \   000034   12....       LCALL   ?L_MOV_X
+   \   000037   E5..         MOV     A,?V0 + 4
+   \   000039   45..         ORL     A,?V0 + 5
+   \   00003B   45..         ORL     A,?V0 + 6
+   \   00003D   45..         ORL     A,?V0 + 7
+   \   00003F   7041         JNZ     ??Ticker_2
+    108              {
+    109                TickerTask[i].reload = (uint32_t)timeout*1000;
+   \   000041   78..         MOV     R0,#?V0 + 0
+   \   000043   12....       LCALL   ?FLT_TO_UL
+   \   000046   90....       MOV     DPTR,#__Constant_3e8
+   \   000049   78..         MOV     R0,#?V0 + 4
+   \   00004B   12....       LCALL   ?L_MOV_X
+   \   00004E   78..         MOV     R0,#?V0 + 0
+   \   000050   79..         MOV     R1,#?V0 + 4
+   \   000052   12....       LCALL   ?L_MUL
+   \   000055   8A82         MOV     DPL,R2
+   \   000057   8B83         MOV     DPH,R3
+   \   000059   78..         MOV     R0,#?V0 + 0
+   \   00005B   12....       LCALL   ?L_MOV_TO_X
+    110                TickerTask[i].count = TickerTask[i].reload;
+   \   00005E   8A82         MOV     DPL,R2
+   \   000060   8B83         MOV     DPH,R3
+   \   000062   A3           INC     DPTR
+   \   000063   A3           INC     DPTR
+   \   000064   A3           INC     DPTR
+   \   000065   A3           INC     DPTR
+   \   000066   78..         MOV     R0,#?V0 + 0
+   \   000068   12....       LCALL   ?L_MOV_TO_X
+    111                TickerTask[i].callback = fun;
+   \   00006B   8A82         MOV     DPL,R2
+   \   00006D   8B83         MOV     DPH,R3
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   A3           INC     DPTR
+   \   000072   A3           INC     DPTR
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   EE           MOV     A,R6
+   \   000078   F0           MOVX    @DPTR,A
+   \   000079   A3           INC     DPTR
+   \   00007A   EF           MOV     A,R7
+   \   00007B   F0           MOVX    @DPTR,A
+    112                return i+1;
+   \   00007C   7401         MOV     A,#0x1
+   \   00007E   2C           ADD     A,R4
+   \   00007F   F9           MOV     R1,A
+    113              }
+   \                     ??Ticker_3:
+   \   000080   80..         SJMP    ?Subroutine0
+    114              else if( i == 15 )
+   \                     ??Ticker_2:
+   \   000082   740F         MOV     A,#0xf
+   \   000084   6C           XRL     A,R4
+   \   000085   7004         JNZ     ??Ticker_4
+    115              {
+    116                return 0;
+   \                     ??Ticker_5:
+   \   000087   7900         MOV     R1,#0x0
+   \   000089   80F5         SJMP    ??Ticker_3
+    117              }
+    118            }
+   \                     ??Ticker_4:
+   \   00008B   0C           INC     R4
+   \   00008C   EC           MOV     A,R4
+   \   00008D   C3           CLR     C
+   \   00008E   9408         SUBB    A,#0x8
+   \   000090   50F5         JNC     ??Ticker_5
+   \   000092   808A         SJMP    ??Ticker_1
+   \   000094                REQUIRE T4CTL
+    119            return 0;
+    120          }
+    121          
+    122          /****************************************
+    123           * 函数名： TickerDel
+    124           * 功能：   解除函数定时调用
+    125           *      
+    126           * 参数:    index-函数队列序号
+    127           *      
+    128           * 返回值： 0-失败 1-成功
+    129          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    130          uint8_t TickerDel(uint8_t index)
+   \                     TickerDel:
+    131          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    132            if( TickerTask[index-1].reload )
+   \   000005   E9           MOV     A,R1
+   \   000006   75F00A       MOV     B,#0xa
+   \   000009   A4           MUL     AB
+   \   00000A   F8           MOV     R0,A
+   \   00000B   A9F0         MOV     R1,B
+   \   00000D   74..         MOV     A,#TickerTask & 0xff
+   \   00000F   28           ADD     A,R0
+   \   000010   FE           MOV     R6,A
+   \   000011   74..         MOV     A,#(TickerTask >> 8) & 0xff
+   \   000013   39           ADDC    A,R1
+   \   000014   FF           MOV     R7,A
+   \   000015   EE           MOV     A,R6
+   \   000016   24F6         ADD     A,#-0xa
+   \   000018   F8           MOV     R0,A
+   \   000019   EF           MOV     A,R7
+   \   00001A   34FF         ADDC    A,#-0x1
+   \   00001C   F9           MOV     R1,A
+   \   00001D   88..         MOV     ?V0 + 0,R0
+   \   00001F   8882         MOV     DPL,R0
+   \   000021   F583         MOV     DPH,A
+   \   000023   78..         MOV     R0,#?V0 + 4
+   \   000025   12....       LCALL   ?L_MOV_X
+   \   000028   E5..         MOV     A,?V0 + 4
+   \   00002A   45..         ORL     A,?V0 + 5
+   \   00002C   45..         ORL     A,?V0 + 6
+   \   00002E   45..         ORL     A,?V0 + 7
+   \   000030   602C         JZ      ??TickerDel_0
+    133            {
+    134              TickerTask[index-1].reload = 0;
+   \   000032   90....       MOV     DPTR,#__Constant_0
+   \   000035   12....       LCALL   ?XLOAD_R2345
+   \   000038   85..82       MOV     DPL,?V0 + 0
+   \   00003B   8983         MOV     DPH,R1
+   \   00003D   12....       LCALL   ?XSTORE_R2345
+    135              TickerTask[index-1].count = 0;
+   \   000040   90....       MOV     DPTR,#__Constant_0
+   \   000043   12....       LCALL   ?XLOAD_R2345
+   \   000046   EE           MOV     A,R6
+   \   000047   24FA         ADD     A,#-0x6
+   \   000049   F582         MOV     DPL,A
+   \   00004B   EF           MOV     A,R7
+   \   00004C   34FF         ADDC    A,#-0x1
+   \   00004E   F583         MOV     DPH,A
+   \   000050   12....       LCALL   ?XSTORE_R2345
+    136              TickerTask[index-1].callback = NULL;
+   \   000053   EE           MOV     A,R6
+   \   000054   24FE         ADD     A,#-0x2
+   \   000056   F582         MOV     DPL,A
+   \   000058   EF           MOV     A,R7
+   \   000059   12....       LCALL   ?Subroutine1 & 0xFFFF
+    137              return 1;
+    138            }
+   \                     ??CrossCallReturnLabel_1:
+   \   00005C   8002         SJMP    ??TickerDel_1
+    139            return 0;
+   \                     ??TickerDel_0:
+   \   00005E   7900         MOV     R1,#0x0
+   \                     ??TickerDel_1:
+   \   000060                REQUIRE ?Subroutine0
+   \   000060                ; // Fall through to label ?Subroutine0
+    140          }
+    141          
+    142          
+    143          #pragma vector = T4_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    144          __interrupt void T4_ISR(void)
+   \                     T4_ISR:
+    145          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74EB         MOV     A,#-0x15
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 21
+   \   000007                ; Auto size: 0
+    146            uint8_t i;
+    147            
+    148            for(i=0; i<TIMEOUT_TASK_MAX;i++)
+   \   000007   75..00       MOV     ?V0 + 0,#0x0
+    149            {
+    150              if(TimeoutTask[i].flag)
+   \                     ??T4_ISR_0:
+   \   00000A   E5..         MOV     A,?V0 + 0
+   \   00000C   75F007       MOV     B,#0x7
+   \   00000F   A4           MUL     AB
+   \   000010   F8           MOV     R0,A
+   \   000011   A9F0         MOV     R1,B
+   \   000013   74..         MOV     A,#TimeoutTask & 0xff
+   \   000015   28           ADD     A,R0
+   \   000016   F8           MOV     R0,A
+   \   000017   74..         MOV     A,#(TimeoutTask >> 8) & 0xff
+   \   000019   39           ADDC    A,R1
+   \   00001A   F9           MOV     R1,A
+   \   00001B   E8           MOV     A,R0
+   \   00001C   FA           MOV     R2,A
+   \   00001D   E9           MOV     A,R1
+   \   00001E   FB           MOV     R3,A
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   E0           MOVX    A,@DPTR
+   \   000024   6051         JZ      ??T4_ISR_1
+    151              {
+    152                if( --TimeoutTask[i].count == 0 )
+   \   000026   A3           INC     DPTR
+   \   000027   AE82         MOV     R6,DPL
+   \   000029   AF83         MOV     R7,DPH
+   \   00002B   90....       MOV     DPTR,#__Constant_ffffffff
+   \   00002E   78..         MOV     R0,#?V0 + 4
+   \   000030   12....       LCALL   ?L_MOV_X
+   \   000033   8E82         MOV     DPL,R6
+   \   000035   8F83         MOV     DPH,R7
+   \   000037   78..         MOV     R0,#?V0 + 4
+   \   000039   12....       LCALL   ?L_ADD_TO_X
+   \   00003C   8E82         MOV     DPL,R6
+   \   00003E   8F83         MOV     DPH,R7
+   \   000040   78..         MOV     R0,#?V0 + 4
+   \   000042   12....       LCALL   ?L_MOV_X
+   \   000045   12....       LCALL   ?Subroutine2
+   \                     ??CrossCallReturnLabel_2:
+   \   000048   702D         JNZ     ??T4_ISR_1
+    153                {
+    154                  TimeoutTask[i].callback();
+   \   00004A   EA           MOV     A,R2
+   \   00004B   2405         ADD     A,#0x5
+   \   00004D   F8           MOV     R0,A
+   \   00004E   EB           MOV     A,R3
+   \   00004F   3400         ADDC    A,#0x0
+   \   000051   F9           MOV     R1,A
+   \   000052   88..         MOV     ?V0 + 2,R0
+   \   000054   89..         MOV     ?V0 + 3,R1
+   \   000056                ; Setup parameters for indirect call
+   \   000056   8882         MOV     DPL,R0
+   \   000058   F583         MOV     DPH,A
+   \   00005A   12....       LCALL   ?Subroutine3
+   \                     ??CrossCallReturnLabel_5:
+   \   00005D   12....       LCALL   ?CALL_IND
+    155                  TimeoutTask[i].count = 0;
+   \   000060   90....       MOV     DPTR,#__Constant_0
+   \   000063   12....       LCALL   ?XLOAD_R2345
+   \   000066   8E82         MOV     DPL,R6
+   \   000068   8F83         MOV     DPH,R7
+   \   00006A   12....       LCALL   ?XSTORE_R2345
+    156                  TimeoutTask[i].callback = NULL;
+   \   00006D   85..82       MOV     DPL,?V0 + 2
+   \   000070   85..83       MOV     DPH,?V0 + 3
+   \   000073   E4           CLR     A
+   \   000074   F0           MOVX    @DPTR,A
+   \   000075   A3           INC     DPTR
+   \   000076   F0           MOVX    @DPTR,A
+    157                }        
+    158              }
+    159            }
+   \                     ??T4_ISR_1:
+   \   000077   05..         INC     ?V0 + 0
+   \   000079   E5..         MOV     A,?V0 + 0
+   \   00007B   C3           CLR     C
+   \   00007C   9408         SUBB    A,#0x8
+   \   00007E   408A         JC      ??T4_ISR_0
+    160            for(i=0; i<TICKER_TASK_MAX;i++)
+   \   000080   75..00       MOV     ?V0 + 0,#0x0
+    161            {
+    162              if(TickerTask[i].reload)
+   \                     ??T4_ISR_2:
+   \   000083   E5..         MOV     A,?V0 + 0
+   \   000085   75F00A       MOV     B,#0xa
+   \   000088   A4           MUL     AB
+   \   000089   F8           MOV     R0,A
+   \   00008A   A9F0         MOV     R1,B
+   \   00008C   74..         MOV     A,#TickerTask & 0xff
+   \   00008E   28           ADD     A,R0
+   \   00008F   F8           MOV     R0,A
+   \   000090   74..         MOV     A,#(TickerTask >> 8) & 0xff
+   \   000092   39           ADDC    A,R1
+   \   000093   F9           MOV     R1,A
+   \   000094   E8           MOV     A,R0
+   \   000095   FE           MOV     R6,A
+   \   000096   E9           MOV     A,R1
+   \   000097   FF           MOV     R7,A
+   \   000098   8E82         MOV     DPL,R6
+   \   00009A   8F83         MOV     DPH,R7
+   \   00009C   78..         MOV     R0,#?V0 + 4
+   \   00009E   12....       LCALL   ?L_MOV_X
+   \   0000A1   12....       LCALL   ?Subroutine2
+   \                     ??CrossCallReturnLabel_3:
+   \   0000A4   604F         JZ      ??T4_ISR_3
+    163              {
+    164                if( --TickerTask[i].count == 0 )
+   \   0000A6   EE           MOV     A,R6
+   \   0000A7   2404         ADD     A,#0x4
+   \   0000A9   F8           MOV     R0,A
+   \   0000AA   EF           MOV     A,R7
+   \   0000AB   3400         ADDC    A,#0x0
+   \   0000AD   F9           MOV     R1,A
+   \   0000AE   88..         MOV     ?V0 + 2,R0
+   \   0000B0   89..         MOV     ?V0 + 3,R1
+   \   0000B2   90....       MOV     DPTR,#__Constant_ffffffff
+   \   0000B5   78..         MOV     R0,#?V0 + 4
+   \   0000B7   12....       LCALL   ?L_MOV_X
+   \   0000BA   85..82       MOV     DPL,?V0 + 2
+   \   0000BD   8983         MOV     DPH,R1
+   \   0000BF   78..         MOV     R0,#?V0 + 4
+   \   0000C1   12....       LCALL   ?L_ADD_TO_X
+   \   0000C4   85..82       MOV     DPL,?V0 + 2
+   \   0000C7   8983         MOV     DPH,R1
+   \   0000C9   78..         MOV     R0,#?V0 + 4
+   \   0000CB   12....       LCALL   ?L_MOV_X
+   \   0000CE   12....       LCALL   ?Subroutine2
+   \                     ??CrossCallReturnLabel_4:
+   \   0000D1   7022         JNZ     ??T4_ISR_3
+    165                {
+    166                  TickerTask[i].callback();
+   \   0000D3                ; Setup parameters for indirect call
+   \   0000D3   8E82         MOV     DPL,R6
+   \   0000D5   8F83         MOV     DPH,R7
+   \   0000D7   A3           INC     DPTR
+   \   0000D8   A3           INC     DPTR
+   \   0000D9   A3           INC     DPTR
+   \   0000DA   A3           INC     DPTR
+   \   0000DB   A3           INC     DPTR
+   \   0000DC   A3           INC     DPTR
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   A3           INC     DPTR
+   \   0000DF   12....       LCALL   ?Subroutine3
+   \                     ??CrossCallReturnLabel_6:
+   \   0000E2   12....       LCALL   ?CALL_IND
+    167                  TickerTask[i].count = TickerTask[i].reload;
+   \   0000E5   8E82         MOV     DPL,R6
+   \   0000E7   8F83         MOV     DPH,R7
+   \   0000E9   12....       LCALL   ?XLOAD_R2345
+   \   0000EC   85..82       MOV     DPL,?V0 + 2
+   \   0000EF   85..83       MOV     DPH,?V0 + 3
+   \   0000F2   12....       LCALL   ?XSTORE_R2345
+    168                } 
+    169              }
+    170            }
+   \                     ??T4_ISR_3:
+   \   0000F5   05..         INC     ?V0 + 0
+   \   0000F7   E5..         MOV     A,?V0 + 0
+   \   0000F9   C3           CLR     C
+   \   0000FA   9408         SUBB    A,#0x8
+   \   0000FC   4085         JC      ??T4_ISR_2
+    171          }
+   \   0000FE   7F08         MOV     R7,#0x8
+   \   000100   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F583         MOV     DPH,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   22           RET
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   E5..         MOV     A,?V0 + 4
+   \   000002   45..         ORL     A,?V0 + 5
+   \   000004   45..         ORL     A,?V0 + 6
+   \   000006   45..         ORL     A,?V0 + 7
+   \   000008   22           RET
+
+   \                                 In  segment INTVEC, offset 0x63, root
+   \                     `??T4_ISR??INTVEC 99`:
+   \   000063   02....       LJMP       (T4_ISR)
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e8:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ffffffff:
+   \   000000   FFFFFFFF     DD 4294967295
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??T4_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    T4_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Timeout?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Timeout
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TimeoutDel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TimeoutDel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Ticker?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Ticker
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TickerDel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TickerDel
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     T4_ISR           0      0     21
+     T4_Init          0      0     16
+     Ticker           0      0     20
+       -> T4_Init     0      0     32
+     TickerDel        0      0     16
+     Timeout          0      0     20
+       -> T4_Init     0      0     32
+     TimeoutDel       0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     _A_IEN0                1
+     _A_IEN1                1
+     T4CTL                  1
+     T4CC0                  1
+     TimeoutTask           56
+     TickerTask            80
+     T4_Init               25
+     Timeout              125
+     ?Subroutine0           5
+     TimeoutDel            71
+     ?Subroutine1          11
+     Ticker               148
+     TickerDel             96
+     T4_ISR               259
+     ?Subroutine3           9
+     ?Subroutine2           9
+     ??T4_ISR??INTVEC 99    3
+     __Constant_3e8         4
+     __Constant_0           4
+     __Constant_ffffffff    4
+     ??T4_Init?relay        6
+     ??Timeout?relay        6
+     ??TimeoutDel?relay     6
+     ??Ticker?relay         6
+     ??TickerDel?relay      6
+
+ 
+ 481 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+ 277 bytes in segment NEAR_CODE
+   4 bytes in segment SFR_AN
+  12 bytes in segment XDATA_ROM_C
+ 136 bytes in segment XDATA_Z
+ 
+ 788 bytes of CODE  memory (+  3 bytes shared)
+   0 bytes of CONST memory (+ 12 bytes shared)
+   0 bytes of DATA  memory (+  4 bytes shared)
+ 136 bytes of XDATA memory
+
+Errors: none
+Warnings: none

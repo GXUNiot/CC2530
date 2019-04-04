@@ -1,0 +1,1596 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        21/Mar/2019  12:31:43 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Users\CNiot\Desktop\20190310A                  /
+//                          防火防盗系统\Project\CNiot\CC2530_API\IO.c        /
+//    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A              /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev. /
+//                          cfg" (-DCPU32MHZ -DROOT=__near_func               /
+//                          -DBLINK_LEDS) -f "C:\Users\CNiot\Desktop\20190310 /
+//                          A 防火防盗系统\Project\Projects\zstack\Samples\Ge /
+//                          nericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConf /
+//                          ig.cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0         /
+//                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800         /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Users\CNiot\Desktop\20 /
+//                          190310A 防火防盗系统\Project\CNiot\CC2530_API\IO. /
+//                          c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D     /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D            /
+//                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\2019031 /
+//                          0A 防火防盗系统\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\EndDeviceEB\List\" -lA         /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\List\"                /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\Obj\" -e --debug      /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\" -I "C:\Users\CNiot\Desktop\2019 /
+//                          0310A 防火防盗系统\Project\Projects\zstack\Sample /
+//                          s\GenericApp\CC2530DB\..\SOURCE\" -I              /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I      /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\"    /
+//                          -I "C:\Users\CNiot\Desktop\20190310A              /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INC /
+//                          LUDE\" -I "C:\Users\CNiot\Desktop\20190310A       /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TAR /
+//                          GET\CC2530EB\" -I "C:\Users\CNiot\Desktop\2019031 /
+//                          0A 防火防盗系统\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL /
+//                          \MCU\CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A /
+//                           防火防盗系统\Project\Projects\zstack\Samples\Gen /
+//                          ericApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\I /
+//                          NCLUDE\" -I "C:\Users\CNiot\Desktop\20190310A     /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\A /
+//                          F\" -I "C:\Users\CNiot\Desktop\20190310A          /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N /
+//                          WK\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          EC\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          API\" -I "C:\Users\CNiot\Desktop\20190310A        /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\S /
+//                          YS\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\Z /
+//                          DO\" -I "C:\Users\CNiot\Desktop\20190310A         /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8 /
+//                          W\" -I "C:\Users\CNiot\Desktop\20190310A          /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"  /
+//                          -I "C:\Users\CNiot\Desktop\20190310A              /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE /
+//                          S\SADDR\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICE /
+//                          S\SDATA\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INC /
+//                          LUDE\" -I "C:\Users\CNiot\Desktop\20190310A       /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIG /
+//                          H_LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A    /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW /
+//                          _LEVEL\srf04\" -I "C:\Users\CNiot\Desktop\2019031 /
+//                          0A 防火防盗系统\Project\Projects\zstack\Samples\G /
+//                          enericApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\ /
+//                          LOW_LEVEL\srf04\SINGLE_CHIP\" -I                  /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\" -I         /
+//                          "C:\Users\CNiot\Desktop\20190310A                 /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\" /
+//                           -I "C:\Users\CNiot\Desktop\20190310A             /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\" /
+//                           -I "C:\Users\CNiot\Desktop\20190310A             /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\" /
+//                           -Ohz                                             /
+//    List file          =  C:\Users\CNiot\Desktop\20190310A                  /
+//                          防火防盗系统\Project\Projects\zstack\Samples\Gene /
+//                          ricApp\CC2530DB\EndDeviceEB\List\IO.s51           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME IO
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?CALL_IND
+        EXTERN ?INTERRUPT_ENTER_XSP
+        EXTERN ?INTERRUPT_LEAVE_XSP
+        EXTERN ?S_SHL
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK `??P0_ISR??INTVEC 107`
+        PUBWEAK `??P1_ISR??INTVEC 123`
+        PUBWEAK `??P2_ISR??INTVEC 51`
+        PUBLIC ??fPinMode?relay
+        FUNCTION ??fPinMode?relay,0203H
+        PUBLIC ??fattachInterrupt?relay
+        FUNCTION ??fattachInterrupt?relay,0203H
+        PUBWEAK IEN2
+        PUBLIC IO_Interrupt_Irq
+        PUBLIC Interrupt_IO_Table
+        PUBLIC Interrupt_IO_TableCnt
+        PUBWEAK P0DIR
+        PUBWEAK P0IEN
+        PUBWEAK P0IFG
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        PUBLIC P0_ISR
+        FUNCTION P0_ISR,021233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        PUBWEAK P1DIR
+        PUBWEAK P1IEN
+        PUBWEAK P1IFG
+        PUBWEAK P1INP
+        PUBWEAK P1SEL
+        PUBLIC P1_ISR
+        FUNCTION P1_ISR,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK P2DIR
+        PUBWEAK P2IEN
+        PUBWEAK P2IFG
+        PUBWEAK P2INP
+        PUBWEAK P2SEL
+        PUBLIC P2_ISR
+        FUNCTION P2_ISR,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK PICTL
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_IRCON
+        PUBWEAK _A_IRCON2
+        PUBLIC fPinMode
+        FUNCTION fPinMode,0203H
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC fattachInterrupt
+        FUNCTION fattachInterrupt,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+BitToNum            SYMBOL "BitToNum"
+??BitToNum?relay    SYMBOL "?relay", BitToNum
+P0_ISR              SYMBOL "P0_ISR"
+`??P0_ISR??INTVEC 107` SYMBOL "??INTVEC 107", P0_ISR
+P1_ISR              SYMBOL "P1_ISR"
+`??P1_ISR??INTVEC 123` SYMBOL "??INTVEC 123", P1_ISR
+P2_ISR              SYMBOL "P2_ISR"
+`??P2_ISR??INTVEC 51` SYMBOL "??INTVEC 51", P2_ISR
+fPinMode            SYMBOL "fPinMode"
+??fPinMode?relay    SYMBOL "?relay", fPinMode
+fattachInterrupt    SYMBOL "fattachInterrupt"
+??fattachInterrupt?relay SYMBOL "?relay", fattachInterrupt
+
+        EXTERN BitToNum
+        FUNCTION BitToNum,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??BitToNum?relay
+        FUNCTION ??BitToNum?relay,00H
+
+// C:\Users\CNiot\Desktop\20190310A 防火防盗系统\Project\CNiot\CC2530_API\IO.c
+//    1 #include "IO.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,089H
+// unsigned char volatile __sfr P0IFG
+P0IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08aH
+// unsigned char volatile __sfr P1IFG
+P1IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08bH
+// unsigned char volatile __sfr P2IFG
+P2IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08dH
+// unsigned char volatile __sfr P1IEN
+P1IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0abH
+// unsigned char volatile __sfr P0IEN
+P0IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0acH
+// unsigned char volatile __sfr P2IEN
+P2IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f6H
+// unsigned char volatile __sfr P1INP
+P1INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f7H
+// unsigned char volatile __sfr P2INP
+P2INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DATA8
+        DS 1
+//    2 
+//    3 
+//    4 /****************************************
+//    5  * 函数名： fPinMode
+//    6  * 功能??  初始化IO?? *      
+//    7  * 参数:    pin-io口序??mode-模式
+//    8  *      
+//    9  * 返回值： void
+//   10 ****************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   11 void fPinMode(GPIO_Pin pin, unsigned char mode)
+fPinMode:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function fPinMode
+        CODE
+//   12 {
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+//   13   switch(mode)
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SHR
+        MOV     A,?V0 + 0
+        ANL     A,#0xe0
+        MOV     R0,A
+        MOV     A,R2
+        CPL     A
+        MOV     ?V0 + 2,A
+        MOV     A,R3
+        ANL     A,#0x4
+        MOV     ?V0 + 1,A
+        MOV     A,R3
+        ANL     A,#0x2
+        MOV     R7,A
+        MOV     A,R3
+        ANL     A,#0x1
+        MOV     R5,A
+        MOV     A,R1
+        JZ      ??fPinMode_0
+        DEC     A
+        JZ      ??fPinMode_1
+        DEC     A
+        JZ      ??fPinMode_2
+        ADD     A,#-0x2
+        JZ      ??fPinMode_3
+        ADD     A,#-0x4
+        JNZ     $+5
+        LJMP    ??fPinMode_4 & 0xFFFF
+        LJMP    ??fPinMode_5 & 0xFFFF
+//   14   {
+//   15   case INPUT:           
+//   16                   if( (pin & GPIO_P0) == GPIO_P0 )
+??fPinMode_0:
+        MOV     A,R5
+        JZ      ??fPinMode_6
+//   17                   {
+//   18                     P0SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine0 & 0xFFFF
+//   19                     P0DIR &= ~(pin&0xFF);
+//   20                     P0INP &= ~(pin&0xFF);
+//   21                   }else if( (pin & GPIO_P1) == GPIO_P1 )
+??CrossCallReturnLabel_0:
+        LJMP    ??fPinMode_5 & 0xFFFF
+??fPinMode_6:
+        MOV     A,R7
+        JZ      ??fPinMode_7
+//   22                   {
+//   23                     P1SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine1 & 0xFFFF
+//   24                     P1DIR &= ~(pin&0xFF);
+//   25                     P1INP &= ~(pin&0xFF);
+//   26                   }else if( (pin & GPIO_P2) == GPIO_P2 )
+??CrossCallReturnLabel_3:
+        LJMP    ??fPinMode_5 & 0xFFFF
+??fPinMode_7:
+        MOV     A,?V0 + 1
+        JNZ     $+5
+        LJMP    ??fPinMode_5 & 0xFFFF
+//   27                   {
+//   28                     P2SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf5,A
+//   29                     P2DIR &= ~(pin&0xFF);
+        ANL     0xff,A
+//   30                     P2INP &= ~(pin&0xFF);
+??fPinMode_8:
+        ANL     0xf7,A
+        LJMP    ??fPinMode_5 & 0xFFFF
+//   31                   }
+//   32                     
+//   33     break;
+//   34   case INPUT_UP:
+//   35                   if( (pin & GPIO_P0) == GPIO_P0 )
+??fPinMode_1:
+        MOV     A,R0
+        CPL     A
+        MOV     R0,A
+        MOV     A,R5
+        JZ      ??fPinMode_9
+//   36                   {
+//   37                     P0SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine0 & 0xFFFF
+//   38                     P0DIR &= ~(pin&0xFF);
+//   39                     P0INP &= ~(pin&0xFF);
+//   40                     P2INP &= ~(((pin>>8)&0xF)<<5);
+??CrossCallReturnLabel_1:
+        MOV     A,R0
+        SJMP    ??fPinMode_8
+//   41                   }else if( (pin & GPIO_P1) == GPIO_P1 )
+??fPinMode_9:
+        MOV     A,R7
+        JZ      ??fPinMode_10
+//   42                   {
+//   43                     P1SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine1 & 0xFFFF
+//   44                     P1DIR &= ~(pin&0xFF);
+//   45                     P1INP &= ~(pin&0xFF);
+//   46                     P2INP &= ~(((pin>>8)&0xF)<<5);
+??CrossCallReturnLabel_4:
+        SJMP    ??CrossCallReturnLabel_1
+//   47                   }else if( (pin & GPIO_P2) == GPIO_P2 )
+??fPinMode_10:
+        MOV     A,?V0 + 1
+        JZ      ??fPinMode_5
+//   48                   {
+//   49                     P2SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf5,A
+//   50                     P2DIR &= ~(pin&0xFF);
+        ANL     0xff,A
+//   51                     P2INP &= ~(pin&0xFF);
+        ANL     0xf7,A
+//   52                      P2INP &= ~(((pin>>8)&0xF)<<5);
+        SJMP    ??CrossCallReturnLabel_1
+//   53                   }
+//   54     break;
+//   55   case INPUT_DOWN:
+//   56                   if( (pin & GPIO_P0) == GPIO_P0 )
+??fPinMode_2:
+        MOV     A,R5
+        JZ      ??fPinMode_11
+//   57                   {
+//   58                     P0SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine0 & 0xFFFF
+//   59                     P0DIR &= ~(pin&0xFF);
+//   60                     P0INP &= ~(pin&0xFF);
+//   61                     P2INP |= (((pin>>8)&0xF)<<5);
+??CrossCallReturnLabel_2:
+        MOV     A,R0
+??fPinMode_12:
+        ORL     0xf7,A
+        SJMP    ??fPinMode_5
+//   62                   }else if( (pin & GPIO_P1) == GPIO_P1 )
+??fPinMode_11:
+        MOV     A,R7
+        JZ      ??fPinMode_13
+//   63                   {
+//   64                     P1SEL &= ~(pin&0xFF);
+        LCALL   ?Subroutine1 & 0xFFFF
+//   65                     P1DIR &= ~(pin&0xFF);
+//   66                     P1INP &= ~(pin&0xFF);
+//   67                     P2INP |= (((pin>>8)&0xF)<<5);
+??CrossCallReturnLabel_5:
+        SJMP    ??CrossCallReturnLabel_2
+//   68                   }else if( (pin & GPIO_P2) == GPIO_P2 )
+??fPinMode_13:
+        MOV     A,?V0 + 1
+        JZ      ??fPinMode_5
+//   69                   {
+//   70                     P2SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf5,A
+//   71                     P2DIR &= ~(pin&0xFF);
+        ANL     0xff,A
+//   72                     P2INP &= ~(pin&0xFF);
+        ANL     0xf7,A
+//   73                     P2INP |= (((pin>>8)&0xF)<<5);
+        SJMP    ??CrossCallReturnLabel_2
+//   74                   }
+//   75     break;
+//   76   case INPUT_HRES:
+//   77                   if( (pin & GPIO_P0) == GPIO_P0 )
+??fPinMode_3:
+        MOV     A,R5
+        JZ      ??fPinMode_14
+//   78                   {
+//   79                     P0SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf3,A
+//   80                     P0DIR &= ~(pin&0xFF);
+        ANL     0xfd,A
+//   81                     P0INP |= (pin&0xFF);
+        MOV     A,R2
+        ORL     0x8f,A
+        SJMP    ??fPinMode_5
+//   82                   }else if( (pin & GPIO_P1) == GPIO_P1 )
+??fPinMode_14:
+        MOV     A,R7
+        JZ      ??fPinMode_15
+//   83                   {
+//   84                     P1SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf4,A
+//   85                     P1DIR &= ~(pin&0xFF);
+        ANL     0xfe,A
+//   86                     P1INP |= (pin&0xFF);
+        MOV     A,R2
+        ORL     0xf6,A
+        SJMP    ??fPinMode_5
+//   87                   }else if( (pin & GPIO_P2) == GPIO_P2 )
+??fPinMode_15:
+        MOV     A,?V0 + 1
+        JZ      ??fPinMode_5
+//   88                   {
+//   89                     P2SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf5,A
+//   90                     P2DIR &= ~(pin&0xFF);
+        ANL     0xff,A
+//   91                     P2INP |= (pin&0xFF);
+        MOV     A,R2
+        SJMP    ??fPinMode_12
+//   92                   }
+//   93     break;
+//   94   case OUTPUT:  
+//   95                   if( (pin & GPIO_P0) == GPIO_P0 )
+??fPinMode_4:
+        MOV     A,R5
+        JZ      ??fPinMode_16
+//   96                   {
+//   97                     P0SEL &= ~(pin & 0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf3,A
+//   98                     P0DIR |= (pin&0xFF);
+        MOV     A,R2
+        ORL     0xfd,A
+        SJMP    ??fPinMode_5
+//   99                   }else if( (pin & GPIO_P1) == GPIO_P1 )
+??fPinMode_16:
+        MOV     A,R7
+        JZ      ??fPinMode_17
+//  100                   {
+//  101                     P1SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf4,A
+//  102                     P1DIR |= (pin&0xFF);
+        MOV     A,R2
+        ORL     0xfe,A
+        SJMP    ??fPinMode_5
+//  103                   }else if( (pin & GPIO_P2) == GPIO_P2 )
+??fPinMode_17:
+        MOV     A,?V0 + 1
+        JZ      ??fPinMode_5
+//  104                   {
+//  105                     P2SEL &= ~(pin&0xFF);
+        MOV     A,?V0 + 2
+        ANL     0xf5,A
+//  106                     P2DIR |= (pin&0xFF);
+        MOV     A,R2
+        ORL     0xff,A
+//  107                   }
+//  108                   
+//  109     break;
+//  110   default: ;
+//  111   }
+//  112 }
+??fPinMode_5:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P0INP
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE P1INP
+        REQUIRE P2SEL
+        REQUIRE P2DIR
+        REQUIRE P2INP
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiCond1 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_3
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiCond2 Using cfiCommon0
+        CFI (cfiCond2) NoFunction
+        CFI (cfiCond2) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond2) R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond2) VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond2) V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond2) V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond2) V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond2) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond2) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond2) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond2) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond2) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond2) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond2) CFA_SP SP+0
+        CFI (cfiCond2) CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiCond3 Using cfiCommon0
+        CFI (cfiCond3) NoFunction
+        CFI (cfiCond3) Conditional ??CrossCallReturnLabel_5
+        CFI (cfiCond3) R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond3) VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond3) V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond3) V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond3) V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond3) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond3) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond3) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond3) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond3) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond3) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond3) CFA_SP SP+0
+        CFI (cfiCond3) CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiPicker4 Using cfiCommon1
+        CFI (cfiPicker4) NoFunction
+        CFI (cfiPicker4) Picker
+        MOV     A,?V0 + 2
+        ANL     0xf4,A
+        ANL     0xfe,A
+        ANL     0xf6,A
+        RET
+        CFI EndBlock cfiCond1
+        CFI EndBlock cfiCond2
+        CFI EndBlock cfiCond3
+        CFI EndBlock cfiPicker4
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiCond5 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiCond6 Using cfiCommon0
+        CFI (cfiCond6) NoFunction
+        CFI (cfiCond6) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond6) R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond6) VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond6) V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond6) V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond6) V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond6) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond6) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond6) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond6) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond6) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond6) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond6) CFA_SP SP+0
+        CFI (cfiCond6) CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiCond7 Using cfiCommon0
+        CFI (cfiCond7) NoFunction
+        CFI (cfiCond7) Conditional ??CrossCallReturnLabel_2
+        CFI (cfiCond7) R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond7) VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond7) V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond7) V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond7) V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond7) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond7) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond7) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond7) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond7) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond7) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond7) CFA_SP SP+0
+        CFI (cfiCond7) CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiPicker8 Using cfiCommon1
+        CFI (cfiPicker8) NoFunction
+        CFI (cfiPicker8) Picker
+        MOV     A,?V0 + 2
+        ANL     0xf3,A
+        ANL     0xfd,A
+        ANL     0x8f,A
+        RET
+        CFI EndBlock cfiCond5
+        CFI EndBlock cfiCond6
+        CFI EndBlock cfiCond7
+        CFI EndBlock cfiPicker8
+//  113 
+//  114 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  115 IO_Interrupt_IRQ IO_Interrupt_Irq[21]={NULL};
+IO_Interrupt_Irq:
+        DS 42
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  116 uint16_t Interrupt_IO_Table[21]={0};
+Interrupt_IO_Table:
+        DS 42
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  117 uint8_t Interrupt_IO_TableCnt = 0;
+Interrupt_IO_TableCnt:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  118 
+//  119 /****************************************
+//  120  * 函数名： fattachInterrupt
+//  121  * 功能??  初始化IO口中?? *      
+//  122  * 参数:    pin-io口序??*fun-中断响应函数 mode-模式
+//  123  *      
+//  124  * 返回值： void
+//  125 ****************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  126 void fattachInterrupt(GPIO_Pin pin, void (*fun)(void), uint8_t mode)
+fattachInterrupt:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function fattachInterrupt
+        CODE
+//  127 {
+        FUNCALL fattachInterrupt, fPinMode
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL fattachInterrupt, fPinMode
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL fattachInterrupt, BitToNum
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL fattachInterrupt, BitToNum
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     ?V0 + 2,R1
+//  128   if(mode)
+        MOV     A,R1
+        JZ      ??fattachInterrupt_0
+//  129     fPinMode(pin,INPUT_UP);
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x1
+        SJMP    ??fattachInterrupt_1
+//  130   else
+//  131     fPinMode(pin,INPUT_DOWN);
+??fattachInterrupt_0:
+        ; Setup parameters for call to function fPinMode
+        MOV     R1,#0x2
+??fattachInterrupt_1:
+        LCALL   ??fPinMode?relay
+//  132   
+//  133   if( (pin & GPIO_P0) == GPIO_P0 )
+        MOV     A,R6
+        CPL     A
+        MOV     R2,A
+        MOV     A,R7
+        ANL     A,#0x1
+        JZ      ??fattachInterrupt_2
+//  134   {
+//  135     P0IEN |= (pin&0xFF);
+        MOV     A,R6
+        ORL     0xab,A
+//  136     if(mode)
+        MOV     A,?V0 + 2
+        JZ      ??fattachInterrupt_3
+//  137       PICTL |= 0x01;
+        ORL     0x8c,#0x1
+//  138     IEN1 |= 0x20;
+??fattachInterrupt_3:
+        SETB    0xb8.5
+//  139     P0IFG &= ~(pin&0xFF);
+        MOV     A,R2
+        ANL     0x89,A
+        SJMP    ??fattachInterrupt_4
+//  140   }
+//  141   else if( (pin & GPIO_P1) == GPIO_P1 )
+??fattachInterrupt_2:
+        MOV     A,R7
+        ANL     A,#0x2
+        JZ      ??fattachInterrupt_5
+//  142   {
+//  143     P1IEN |= (pin&0xFF);
+        MOV     A,R6
+        ORL     0x8d,A
+//  144     if(mode)
+        MOV     A,?V0 + 2
+        JZ      ??fattachInterrupt_6
+//  145       if( pin &0x0F )
+        MOV     A,R6
+        ANL     A,#0xf
+        JZ      ??fattachInterrupt_7
+//  146         PICTL |= 0x02;
+        ORL     0x8c,#0x2
+        SJMP    ??fattachInterrupt_6
+//  147       else if( pin &0xF0 )
+??fattachInterrupt_7:
+        MOV     A,R6
+        ANL     A,#0xf0
+        JZ      ??fattachInterrupt_6
+//  148         PICTL |= 0x04;
+        ORL     0x8c,#0x4
+//  149     IEN2 |= 0x10;
+??fattachInterrupt_6:
+        ORL     0x9a,#0x10
+//  150     P1IFG &= ~(pin&0xFF);
+        MOV     A,R2
+        ANL     0x8a,A
+        SJMP    ??fattachInterrupt_4
+//  151   }
+//  152   else if( (pin & GPIO_P2) == GPIO_P2 )
+??fattachInterrupt_5:
+        MOV     A,R7
+        ANL     A,#0x4
+        JZ      ??fattachInterrupt_4
+//  153   {
+//  154     P2IEN |= (pin&0x1F);
+        MOV     A,R6
+        ANL     A,#0x1f
+        MOV     R0,A
+        ORL     0xac,A
+//  155     if(mode)
+        MOV     A,?V0 + 2
+        JZ      ??fattachInterrupt_8
+//  156       PICTL |= 0x01;
+        ORL     0x8c,#0x1
+//  157     IEN1 |= 0x02;
+??fattachInterrupt_8:
+        SETB    0xb8.1
+//  158     P2IFG &= ~(pin&0x1F);
+        MOV     A,R0
+        CPL     A
+        ANL     0x8b,A
+//  159   }
+//  160 
+//  161   Interrupt_IO_Table[Interrupt_IO_TableCnt++] = pin;
+??fattachInterrupt_4:
+        MOV     DPTR,#Interrupt_IO_TableCnt
+        MOVX    A,@DPTR
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,#Interrupt_IO_Table & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(Interrupt_IO_Table >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        MOV     DPTR,#Interrupt_IO_TableCnt
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//  162 
+//  163   IO_Interrupt_Irq[(BitToNum((pin>>8)&0xFF)*8+BitToNum(pin&0xFF))].irq = fun;
+        ; Setup parameters for call to function BitToNum
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??BitToNum?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        MOV     ?V0 + 5,#0x0
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 4
+        LCALL   ?S_SHL
+        ; Setup parameters for call to function BitToNum
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??BitToNum?relay
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,?V0 + 4
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,?V0 + 5
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        RLC     A
+        MOV     R0,A
+        MOV     A,R1
+        RLC     A
+        MOV     R1,A
+        MOV     A,#IO_Interrupt_Irq & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(IO_Interrupt_Irq >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//  164   EA = 1;
+        SETB    0xa8.7
+//  165 
+//  166 }
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+        REQUIRE P0IEN
+        REQUIRE PICTL
+        REQUIRE _A_IEN1
+        REQUIRE P0IFG
+        REQUIRE P1IEN
+        REQUIRE IEN2
+        REQUIRE P1IFG
+        REQUIRE P2IEN
+        REQUIRE P2IFG
+        REQUIRE _A_IEN0
+//  167 
+//  168 #pragma vector = P0INT_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  169 __interrupt void P0_ISR(void)
+P0_ISR:
+        CFI Block cfiBlock10 Using cfiCommon1
+        CFI Function P0_ISR
+        CODE
+//  170 {
+        FUNCALL P0_ISR, BitToNum
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL P0_ISR, BitToNum
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        MOV     A,#-0x13
+        LCALL   ?INTERRUPT_ENTER_XSP
+        CFI B load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI PSW load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R3 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI R2 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI R1 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI R0 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI CFA_XSP16 add(XSP16, 19)
+        ; Saved register size: 19
+        ; Auto size: 0
+//  171   uint8_t index,i;
+//  172   if(P0IFG>0) //按键中断
+        MOV     A,0x89
+        JNZ     $+5
+        LJMP    ??P0_ISR_0
+//  173   {
+//  174     //Printf(0,"P0IFG:%c\r\n",P0IFG);
+//  175     for(index=0; index<8; index++)
+        MOV     ?V0 + 2,#0x0
+//  176     {
+//  177       if( (P0IFG & (0x01<<index)) == (0x01<<index) )
+??P0_ISR_1:
+        MOV     ?V0 + 0,#0x1
+        MOV     ?V0 + 1,#0x0
+        MOV     A,?V0 + 2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+        MOV     A,0x89
+        ANL     A,R6
+        MOV     R0,A
+        MOV     A,R6
+        XRL     A,R0
+        JNZ     ??P0_ISR_2
+        MOV     A,R7
+??P0_ISR_2:
+        JZ      $+5
+        LJMP    ??P0_ISR_3
+//  178       {
+//  179         for(i=0; i<Interrupt_IO_TableCnt; i++)
+        MOV     ?V0 + 3,#0x0
+        SJMP    ??P0_ISR_4
+//  180         if(Interrupt_IO_Table[i] == GPIO_P0|(0x01<<index) )
+??P0_ISR_5:
+        CLR     B.0
+??P0_ISR_6:
+        MOV     C,B.0
+        CLR     A
+        RLC     A
+        ORL     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??P0_ISR_7
+//  181         {
+//  182           IO_Interrupt_Irq[(BitToNum((GPIO_P0_1>>8)&0xFF)*8+BitToNum(GPIO_P0_1&0xFF))].irq();
+        ; Setup parameters for call to function BitToNum
+        MOV     R1,#0x1
+        LCALL   ??BitToNum?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+        ; Setup parameters for call to function BitToNum
+        MOV     R1,#0x2
+        LCALL   ??BitToNum?relay
+        MOV     A,R1
+        MOV     ?V0 + 4,A
+        ; Setup parameters for indirect call
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 4
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        RLC     A
+        MOV     R0,A
+        MOV     A,R1
+        RLC     A
+        MOV     R1,A
+        MOV     A,#IO_Interrupt_Irq & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(IO_Interrupt_Irq >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?CALL_IND
+//  183         }
+??P0_ISR_7:
+        INC     ?V0 + 3
+??P0_ISR_4:
+        MOV     DPTR,#Interrupt_IO_TableCnt
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     A,?V0 + 3
+        CLR     C
+        SUBB    A,R0
+        JNC     ??P0_ISR_8
+        MOV     A,?V0 + 3
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        MOV     A,#Interrupt_IO_Table & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(Interrupt_IO_Table >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??P0_ISR_9
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+??P0_ISR_9:
+        JNZ     ??P0_ISR_5
+        SETB    B.0
+        SJMP    ??P0_ISR_6
+//  184         P0IFG &= ~(0x01<<index);
+??P0_ISR_8:
+        MOV     A,R6
+        CPL     A
+        ANL     0x89,A
+//  185         
+//  186       }
+//  187     }
+??P0_ISR_3:
+        INC     ?V0 + 2
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,#0x8
+        JNC     $+5
+        LJMP    ??P0_ISR_1
+//  188     //P0IFG = 0;
+//  189   }
+//  190   P0IF = 0; //清中断标??}
+??P0_ISR_0:
+        CLR     0xc0.5
+//  191 }
+        MOV     R7,#0x6
+        LJMP    ?INTERRUPT_LEAVE_XSP
+        CFI EndBlock cfiBlock10
+        REQUIRE P0IFG
+        REQUIRE _A_IRCON
+//  192 
+//  193 #pragma vector = P1INT_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  194 __interrupt void P1_ISR(void)
+P1_ISR:
+        CFI Block cfiBlock11 Using cfiCommon1
+        CFI Function P1_ISR
+        CODE
+//  195 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        ; Saved register size: 2
+        ; Auto size: 0
+//  196   if(P1IFG>0) //按键中断
+        MOV     A,0x8a
+//  197   {
+//  198     /*
+//  199     switch(P1IFG)
+//  200     {
+//  201     case Pin_0: P1_0IRQ();      P1IFG &= ~(Pin_0);
+//  202       break;
+//  203     case Pin_1: P1_1IRQ();      P1IFG &= ~(Pin_1);
+//  204       break;
+//  205     case Pin_2: P1_2IRQ();      P1IFG &= ~(Pin_2);
+//  206       break;
+//  207     case Pin_3: P1_3IRQ();      P1IFG &= ~(Pin_3);
+//  208       break;
+//  209     case Pin_4: P1_4IRQ();      P1IFG &= ~(Pin_4);
+//  210       break;    
+//  211     case Pin_5: P1_5IRQ();      P1IFG &= ~(Pin_5);
+//  212       break;
+//  213     case Pin_6: P1_6IRQ();      P1IFG &= ~(Pin_6);
+//  214       break;
+//  215     case Pin_7: P1_7IRQ();      P1IFG &= ~(Pin_7);
+//  216       break;
+//  217     default:;
+//  218     }
+//  219     */
+//  220     //P1IFG = 0;
+//  221   }
+//  222   P1IF = 0; //清中断标??}
+        CLR     0xe8.3
+//  223 }
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock11
+        REQUIRE P1IFG
+        REQUIRE _A_IRCON2
+//  224 
+//  225 #pragma vector = P2INT_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  226 __interrupt void P2_ISR(void)
+P2_ISR:
+        CFI Block cfiBlock12 Using cfiCommon1
+        CFI Function P2_ISR
+        CODE
+//  227 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        ; Saved register size: 2
+        ; Auto size: 0
+//  228   if(P2IFG>0) //按键中断
+        MOV     A,0x8b
+//  229   {
+//  230     /*
+//  231     switch(P2IFG)
+//  232     {
+//  233     case Pin_0: P2_0IRQ();      P2IFG &= ~(Pin_0);
+//  234       break;
+//  235     case Pin_1: P2_1IRQ();      P2IFG &= ~(Pin_1);
+//  236       break;
+//  237     case Pin_2: P2_2IRQ();      P2IFG &= ~(Pin_2);
+//  238       break;
+//  239     case Pin_3: P2_3IRQ();      P2IFG &= ~(Pin_3);
+//  240       break;
+//  241     case Pin_4: P2_4IRQ();      P2IFG &= ~(Pin_4);
+//  242       break;
+//  243     default:;
+//  244     }
+//  245     */
+//  246     //P2IFG = 0;
+//  247   }
+//  248   P2IF = 0; //清中断标??}
+        CLR     0xe8.0
+//  249 }
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock12
+        REQUIRE P2IFG
+        REQUIRE _A_IRCON2
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 51
+`??P2_ISR??INTVEC 51`:
+        LJMP       (P2_ISR)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 107
+`??P0_ISR??INTVEC 107`:
+        LJMP       (P0_ISR)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 123
+`??P1_ISR??INTVEC 123`:
+        LJMP       (P1_ISR)
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??fPinMode?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    fPinMode
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??fattachInterrupt?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    fattachInterrupt
+
+        END
+// 
+// 472 bytes in segment BANKED_CODE
+//  12 bytes in segment BANK_RELAYS
+//   9 bytes in segment INTVEC
+// 215 bytes in segment NEAR_CODE
+//  21 bytes in segment SFR_AN
+//  85 bytes in segment XDATA_Z
+// 
+// 699 bytes of CODE  memory (+  9 bytes shared)
+//   0 bytes of DATA  memory (+ 21 bytes shared)
+//  85 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,1109 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         21/Mar/2019  12:31:43 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\CNiot\CC2530_API\IO.c         #
+#    Command line       =  -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf #
+#                          g" (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)    #
+#                          -f "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\CNiot\CC2530_API\IO.c" -D     #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D CNIOT -D             #
+#                          xPOWER_SAVING -lC "C:\Users\CNiot\Desktop\20190310 #
+#                          A 防火防盗系统\Project\Projects\zstack\Samples\Gen #
+#                          ericApp\CC2530DB\EndDeviceEB\List\" -lA            #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\CNiot\Desktop\20190310A   #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\" -e --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\CNiot\Desktop\20 #
+#                          190310A 防火防盗系统\Project\Projects\zstack\Sampl #
+#                          es\GenericApp\CC2530DB\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\SOURCE\" -I                      #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I   #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\ #
+#                          CCSOC\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCL #
+#                          UDE\" -I "C:\Users\CNiot\Desktop\20190310A         #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAP #
+#                          I\" -I "C:\Users\CNiot\Desktop\20190310A           #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO #
+#                          \" -I "C:\Users\CNiot\Desktop\20190310A            #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ #
+#                          " -I "C:\Users\CNiot\Desktop\20190310A             #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\"    #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SADDR\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\ #
+#                          SDATA\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLU #
+#                          DE\" -I "C:\Users\CNiot\Desktop\20190310A          #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_ #
+#                          LEVEL\" -I "C:\Users\CNiot\Desktop\20190310A       #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\" -I "C:\Users\CNiot\Desktop\20190310A  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L #
+#                          EVEL\srf04\SINGLE_CHIP\" -I                        #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\" -I           #
+#                          "C:\Users\CNiot\Desktop\20190310A                  #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\ZStack_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\CC2530_API\"   #
+#                          -I "C:\Users\CNiot\Desktop\20190310A               #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\..\..\..\..\..\CNIOT\DRIVER_API\"   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\List\IO.lst             #
+#    Object file        =  C:\Users\CNiot\Desktop\20190310A                   #
+#                          防火防盗系统\Project\Projects\zstack\Samples\Gener #
+#                          icApp\CC2530DB\EndDeviceEB\Obj\IO.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\CNiot\Desktop\20190310A 防火防盗系统\Project\CNiot\CC2530_API\IO.c
+      1          #include "IO.h"
+
+   \                                 In  segment SFR_AN, at 0x89
+   \   unsigned char volatile __sfr P0IFG
+   \                     P0IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8a
+   \   unsigned char volatile __sfr P1IFG
+   \                     P1IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8b
+   \   unsigned char volatile __sfr P2IFG
+   \                     P2IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8d
+   \   unsigned char volatile __sfr P1IEN
+   \                     P1IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xab
+   \   unsigned char volatile __sfr P0IEN
+   \                     P0IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xac
+   \   unsigned char volatile __sfr P2IEN
+   \                     P2IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc0
+   \   union <unnamed> volatile __sfr _A_IRCON
+   \                     _A_IRCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          
+      3          
+      4          /****************************************
+      5           * 函数名： fPinMode
+      6           * 功能??  初始化IO?? *      
+      7           * 参数:    pin-io口序??mode-模式
+      8           *      
+      9           * 返回值： void
+     10          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     11          void fPinMode(GPIO_Pin pin, unsigned char mode)
+   \                     fPinMode:
+     12          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+     13            switch(mode)
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   7403         MOV     A,#0x3
+   \   00000B   78..         MOV     R0,#?V0 + 0
+   \   00000D   12....       LCALL   ?US_SHR
+   \   000010   E5..         MOV     A,?V0 + 0
+   \   000012   54E0         ANL     A,#0xe0
+   \   000014   F8           MOV     R0,A
+   \   000015   EA           MOV     A,R2
+   \   000016   F4           CPL     A
+   \   000017   F5..         MOV     ?V0 + 2,A
+   \   000019   EB           MOV     A,R3
+   \   00001A   5404         ANL     A,#0x4
+   \   00001C   F5..         MOV     ?V0 + 1,A
+   \   00001E   EB           MOV     A,R3
+   \   00001F   5402         ANL     A,#0x2
+   \   000021   FF           MOV     R7,A
+   \   000022   EB           MOV     A,R3
+   \   000023   5401         ANL     A,#0x1
+   \   000025   FD           MOV     R5,A
+   \   000026   E9           MOV     A,R1
+   \   000027   6014         JZ      ??fPinMode_0
+   \   000029   14           DEC     A
+   \   00002A   6035         JZ      ??fPinMode_1
+   \   00002C   14           DEC     A
+   \   00002D   6054         JZ      ??fPinMode_2
+   \   00002F   24FE         ADD     A,#-0x2
+   \   000031   6071         JZ      ??fPinMode_3
+   \   000033   24FC         ADD     A,#-0x4
+   \   000035   7003         JNZ     $+5
+   \   000037   02....       LJMP    ??fPinMode_4 & 0xFFFF
+   \   00003A   02....       LJMP    ??fPinMode_5 & 0xFFFF
+     14            {
+     15            case INPUT:           
+     16                            if( (pin & GPIO_P0) == GPIO_P0 )
+   \                     ??fPinMode_0:
+   \   00003D   ED           MOV     A,R5
+   \   00003E   6006         JZ      ??fPinMode_6
+     17                            {
+     18                              P0SEL &= ~(pin&0xFF);
+   \   000040   12....       LCALL   ?Subroutine0 & 0xFFFF
+     19                              P0DIR &= ~(pin&0xFF);
+     20                              P0INP &= ~(pin&0xFF);
+     21                            }else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??CrossCallReturnLabel_0:
+   \   000043   02....       LJMP    ??fPinMode_5 & 0xFFFF
+   \                     ??fPinMode_6:
+   \   000046   EF           MOV     A,R7
+   \   000047   6006         JZ      ??fPinMode_7
+     22                            {
+     23                              P1SEL &= ~(pin&0xFF);
+   \   000049   12....       LCALL   ?Subroutine1 & 0xFFFF
+     24                              P1DIR &= ~(pin&0xFF);
+     25                              P1INP &= ~(pin&0xFF);
+     26                            }else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??CrossCallReturnLabel_3:
+   \   00004C   02....       LJMP    ??fPinMode_5 & 0xFFFF
+   \                     ??fPinMode_7:
+   \   00004F   E5..         MOV     A,?V0 + 1
+   \   000051   7003         JNZ     $+5
+   \   000053   02....       LJMP    ??fPinMode_5 & 0xFFFF
+     27                            {
+     28                              P2SEL &= ~(pin&0xFF);
+   \   000056   E5..         MOV     A,?V0 + 2
+   \   000058   52F5         ANL     0xf5,A
+     29                              P2DIR &= ~(pin&0xFF);
+   \   00005A   52FF         ANL     0xff,A
+     30                              P2INP &= ~(pin&0xFF);
+   \                     ??fPinMode_8:
+   \   00005C   52F7         ANL     0xf7,A
+   \   00005E   02....       LJMP    ??fPinMode_5 & 0xFFFF
+     31                            }
+     32                              
+     33              break;
+     34            case INPUT_UP:
+     35                            if( (pin & GPIO_P0) == GPIO_P0 )
+   \                     ??fPinMode_1:
+   \   000061   E8           MOV     A,R0
+   \   000062   F4           CPL     A
+   \   000063   F8           MOV     R0,A
+   \   000064   ED           MOV     A,R5
+   \   000065   6006         JZ      ??fPinMode_9
+     36                            {
+     37                              P0SEL &= ~(pin&0xFF);
+   \   000067   12....       LCALL   ?Subroutine0 & 0xFFFF
+     38                              P0DIR &= ~(pin&0xFF);
+     39                              P0INP &= ~(pin&0xFF);
+     40                              P2INP &= ~(((pin>>8)&0xF)<<5);
+   \                     ??CrossCallReturnLabel_1:
+   \   00006A   E8           MOV     A,R0
+   \   00006B   80EF         SJMP    ??fPinMode_8
+     41                            }else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??fPinMode_9:
+   \   00006D   EF           MOV     A,R7
+   \   00006E   6005         JZ      ??fPinMode_10
+     42                            {
+     43                              P1SEL &= ~(pin&0xFF);
+   \   000070   12....       LCALL   ?Subroutine1 & 0xFFFF
+     44                              P1DIR &= ~(pin&0xFF);
+     45                              P1INP &= ~(pin&0xFF);
+     46                              P2INP &= ~(((pin>>8)&0xF)<<5);
+   \                     ??CrossCallReturnLabel_4:
+   \   000073   80F5         SJMP    ??CrossCallReturnLabel_1
+     47                            }else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??fPinMode_10:
+   \   000075   E5..         MOV     A,?V0 + 1
+   \   000077   6077         JZ      ??fPinMode_5
+     48                            {
+     49                              P2SEL &= ~(pin&0xFF);
+   \   000079   E5..         MOV     A,?V0 + 2
+   \   00007B   52F5         ANL     0xf5,A
+     50                              P2DIR &= ~(pin&0xFF);
+   \   00007D   52FF         ANL     0xff,A
+     51                              P2INP &= ~(pin&0xFF);
+   \   00007F   52F7         ANL     0xf7,A
+     52                               P2INP &= ~(((pin>>8)&0xF)<<5);
+   \   000081   80E7         SJMP    ??CrossCallReturnLabel_1
+     53                            }
+     54              break;
+     55            case INPUT_DOWN:
+     56                            if( (pin & GPIO_P0) == GPIO_P0 )
+   \                     ??fPinMode_2:
+   \   000083   ED           MOV     A,R5
+   \   000084   6008         JZ      ??fPinMode_11
+     57                            {
+     58                              P0SEL &= ~(pin&0xFF);
+   \   000086   12....       LCALL   ?Subroutine0 & 0xFFFF
+     59                              P0DIR &= ~(pin&0xFF);
+     60                              P0INP &= ~(pin&0xFF);
+     61                              P2INP |= (((pin>>8)&0xF)<<5);
+   \                     ??CrossCallReturnLabel_2:
+   \   000089   E8           MOV     A,R0
+   \                     ??fPinMode_12:
+   \   00008A   42F7         ORL     0xf7,A
+   \   00008C   8062         SJMP    ??fPinMode_5
+     62                            }else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??fPinMode_11:
+   \   00008E   EF           MOV     A,R7
+   \   00008F   6005         JZ      ??fPinMode_13
+     63                            {
+     64                              P1SEL &= ~(pin&0xFF);
+   \   000091   12....       LCALL   ?Subroutine1 & 0xFFFF
+     65                              P1DIR &= ~(pin&0xFF);
+     66                              P1INP &= ~(pin&0xFF);
+     67                              P2INP |= (((pin>>8)&0xF)<<5);
+   \                     ??CrossCallReturnLabel_5:
+   \   000094   80F3         SJMP    ??CrossCallReturnLabel_2
+     68                            }else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??fPinMode_13:
+   \   000096   E5..         MOV     A,?V0 + 1
+   \   000098   6056         JZ      ??fPinMode_5
+     69                            {
+     70                              P2SEL &= ~(pin&0xFF);
+   \   00009A   E5..         MOV     A,?V0 + 2
+   \   00009C   52F5         ANL     0xf5,A
+     71                              P2DIR &= ~(pin&0xFF);
+   \   00009E   52FF         ANL     0xff,A
+     72                              P2INP &= ~(pin&0xFF);
+   \   0000A0   52F7         ANL     0xf7,A
+     73                              P2INP |= (((pin>>8)&0xF)<<5);
+   \   0000A2   80E5         SJMP    ??CrossCallReturnLabel_2
+     74                            }
+     75              break;
+     76            case INPUT_HRES:
+     77                            if( (pin & GPIO_P0) == GPIO_P0 )
+   \                     ??fPinMode_3:
+   \   0000A4   ED           MOV     A,R5
+   \   0000A5   600B         JZ      ??fPinMode_14
+     78                            {
+     79                              P0SEL &= ~(pin&0xFF);
+   \   0000A7   E5..         MOV     A,?V0 + 2
+   \   0000A9   52F3         ANL     0xf3,A
+     80                              P0DIR &= ~(pin&0xFF);
+   \   0000AB   52FD         ANL     0xfd,A
+     81                              P0INP |= (pin&0xFF);
+   \   0000AD   EA           MOV     A,R2
+   \   0000AE   428F         ORL     0x8f,A
+   \   0000B0   803E         SJMP    ??fPinMode_5
+     82                            }else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??fPinMode_14:
+   \   0000B2   EF           MOV     A,R7
+   \   0000B3   600B         JZ      ??fPinMode_15
+     83                            {
+     84                              P1SEL &= ~(pin&0xFF);
+   \   0000B5   E5..         MOV     A,?V0 + 2
+   \   0000B7   52F4         ANL     0xf4,A
+     85                              P1DIR &= ~(pin&0xFF);
+   \   0000B9   52FE         ANL     0xfe,A
+     86                              P1INP |= (pin&0xFF);
+   \   0000BB   EA           MOV     A,R2
+   \   0000BC   42F6         ORL     0xf6,A
+   \   0000BE   8030         SJMP    ??fPinMode_5
+     87                            }else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??fPinMode_15:
+   \   0000C0   E5..         MOV     A,?V0 + 1
+   \   0000C2   602C         JZ      ??fPinMode_5
+     88                            {
+     89                              P2SEL &= ~(pin&0xFF);
+   \   0000C4   E5..         MOV     A,?V0 + 2
+   \   0000C6   52F5         ANL     0xf5,A
+     90                              P2DIR &= ~(pin&0xFF);
+   \   0000C8   52FF         ANL     0xff,A
+     91                              P2INP |= (pin&0xFF);
+   \   0000CA   EA           MOV     A,R2
+   \   0000CB   80BD         SJMP    ??fPinMode_12
+     92                            }
+     93              break;
+     94            case OUTPUT:  
+     95                            if( (pin & GPIO_P0) == GPIO_P0 )
+   \                     ??fPinMode_4:
+   \   0000CD   ED           MOV     A,R5
+   \   0000CE   6009         JZ      ??fPinMode_16
+     96                            {
+     97                              P0SEL &= ~(pin & 0xFF);
+   \   0000D0   E5..         MOV     A,?V0 + 2
+   \   0000D2   52F3         ANL     0xf3,A
+     98                              P0DIR |= (pin&0xFF);
+   \   0000D4   EA           MOV     A,R2
+   \   0000D5   42FD         ORL     0xfd,A
+   \   0000D7   8017         SJMP    ??fPinMode_5
+     99                            }else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??fPinMode_16:
+   \   0000D9   EF           MOV     A,R7
+   \   0000DA   6009         JZ      ??fPinMode_17
+    100                            {
+    101                              P1SEL &= ~(pin&0xFF);
+   \   0000DC   E5..         MOV     A,?V0 + 2
+   \   0000DE   52F4         ANL     0xf4,A
+    102                              P1DIR |= (pin&0xFF);
+   \   0000E0   EA           MOV     A,R2
+   \   0000E1   42FE         ORL     0xfe,A
+   \   0000E3   800B         SJMP    ??fPinMode_5
+    103                            }else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??fPinMode_17:
+   \   0000E5   E5..         MOV     A,?V0 + 1
+   \   0000E7   6007         JZ      ??fPinMode_5
+    104                            {
+    105                              P2SEL &= ~(pin&0xFF);
+   \   0000E9   E5..         MOV     A,?V0 + 2
+   \   0000EB   52F5         ANL     0xf5,A
+    106                              P2DIR |= (pin&0xFF);
+   \   0000ED   EA           MOV     A,R2
+   \   0000EE   42FF         ORL     0xff,A
+    107                            }
+    108                            
+    109              break;
+    110            default: ;
+    111            }
+    112          }
+   \                     ??fPinMode_5:
+   \   0000F0   7F03         MOV     R7,#0x3
+   \   0000F2   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000F5                REQUIRE P0SEL
+   \   0000F5                REQUIRE P0DIR
+   \   0000F5                REQUIRE P0INP
+   \   0000F5                REQUIRE P1SEL
+   \   0000F5                REQUIRE P1DIR
+   \   0000F5                REQUIRE P1INP
+   \   0000F5                REQUIRE P2SEL
+   \   0000F5                REQUIRE P2DIR
+   \   0000F5                REQUIRE P2INP
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   E5..         MOV     A,?V0 + 2
+   \   000002   52F4         ANL     0xf4,A
+   \   000004   52FE         ANL     0xfe,A
+   \   000006   52F6         ANL     0xf6,A
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   E5..         MOV     A,?V0 + 2
+   \   000002   52F3         ANL     0xf3,A
+   \   000004   52FD         ANL     0xfd,A
+   \   000006   528F         ANL     0x8f,A
+   \   000008   22           RET
+    113          
+    114          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    115          IO_Interrupt_IRQ IO_Interrupt_Irq[21]={NULL};
+   \                     IO_Interrupt_Irq:
+   \   000000                DS 42
+   \   00002A                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    116          uint16_t Interrupt_IO_Table[21]={0};
+   \                     Interrupt_IO_Table:
+   \   000000                DS 42
+   \   00002A                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    117          uint8_t Interrupt_IO_TableCnt = 0;
+   \                     Interrupt_IO_TableCnt:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    118          
+    119          /****************************************
+    120           * 函数名： fattachInterrupt
+    121           * 功能??  初始化IO口中?? *      
+    122           * 参数:    pin-io口序??*fun-中断响应函数 mode-模式
+    123           *      
+    124           * 返回值： void
+    125          ****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    126          void fattachInterrupt(GPIO_Pin pin, void (*fun)(void), uint8_t mode)
+   \                     fattachInterrupt:
+    127          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   89..         MOV     ?V0 + 2,R1
+    128            if(mode)
+   \   00000F   E9           MOV     A,R1
+   \   000010   6004         JZ      ??fattachInterrupt_0
+    129              fPinMode(pin,INPUT_UP);
+   \   000012                ; Setup parameters for call to function fPinMode
+   \   000012   7901         MOV     R1,#0x1
+   \   000014   8002         SJMP    ??fattachInterrupt_1
+    130            else
+    131              fPinMode(pin,INPUT_DOWN);
+   \                     ??fattachInterrupt_0:
+   \   000016                ; Setup parameters for call to function fPinMode
+   \   000016   7902         MOV     R1,#0x2
+   \                     ??fattachInterrupt_1:
+   \   000018   12....       LCALL   ??fPinMode?relay
+    132            
+    133            if( (pin & GPIO_P0) == GPIO_P0 )
+   \   00001B   EE           MOV     A,R6
+   \   00001C   F4           CPL     A
+   \   00001D   FA           MOV     R2,A
+   \   00001E   EF           MOV     A,R7
+   \   00001F   5401         ANL     A,#0x1
+   \   000021   6011         JZ      ??fattachInterrupt_2
+    134            {
+    135              P0IEN |= (pin&0xFF);
+   \   000023   EE           MOV     A,R6
+   \   000024   42AB         ORL     0xab,A
+    136              if(mode)
+   \   000026   E5..         MOV     A,?V0 + 2
+   \   000028   6003         JZ      ??fattachInterrupt_3
+    137                PICTL |= 0x01;
+   \   00002A   438C01       ORL     0x8c,#0x1
+    138              IEN1 |= 0x20;
+   \                     ??fattachInterrupt_3:
+   \   00002D   D2BD         SETB    0xb8.5
+    139              P0IFG &= ~(pin&0xFF);
+   \   00002F   EA           MOV     A,R2
+   \   000030   5289         ANL     0x89,A
+   \   000032   803E         SJMP    ??fattachInterrupt_4
+    140            }
+    141            else if( (pin & GPIO_P1) == GPIO_P1 )
+   \                     ??fattachInterrupt_2:
+   \   000034   EF           MOV     A,R7
+   \   000035   5402         ANL     A,#0x2
+   \   000037   6021         JZ      ??fattachInterrupt_5
+    142            {
+    143              P1IEN |= (pin&0xFF);
+   \   000039   EE           MOV     A,R6
+   \   00003A   428D         ORL     0x8d,A
+    144              if(mode)
+   \   00003C   E5..         MOV     A,?V0 + 2
+   \   00003E   6012         JZ      ??fattachInterrupt_6
+    145                if( pin &0x0F )
+   \   000040   EE           MOV     A,R6
+   \   000041   540F         ANL     A,#0xf
+   \   000043   6005         JZ      ??fattachInterrupt_7
+    146                  PICTL |= 0x02;
+   \   000045   438C02       ORL     0x8c,#0x2
+   \   000048   8008         SJMP    ??fattachInterrupt_6
+    147                else if( pin &0xF0 )
+   \                     ??fattachInterrupt_7:
+   \   00004A   EE           MOV     A,R6
+   \   00004B   54F0         ANL     A,#0xf0
+   \   00004D   6003         JZ      ??fattachInterrupt_6
+    148                  PICTL |= 0x04;
+   \   00004F   438C04       ORL     0x8c,#0x4
+    149              IEN2 |= 0x10;
+   \                     ??fattachInterrupt_6:
+   \   000052   439A10       ORL     0x9a,#0x10
+    150              P1IFG &= ~(pin&0xFF);
+   \   000055   EA           MOV     A,R2
+   \   000056   528A         ANL     0x8a,A
+   \   000058   8018         SJMP    ??fattachInterrupt_4
+    151            }
+    152            else if( (pin & GPIO_P2) == GPIO_P2 )
+   \                     ??fattachInterrupt_5:
+   \   00005A   EF           MOV     A,R7
+   \   00005B   5404         ANL     A,#0x4
+   \   00005D   6013         JZ      ??fattachInterrupt_4
+    153            {
+    154              P2IEN |= (pin&0x1F);
+   \   00005F   EE           MOV     A,R6
+   \   000060   541F         ANL     A,#0x1f
+   \   000062   F8           MOV     R0,A
+   \   000063   42AC         ORL     0xac,A
+    155              if(mode)
+   \   000065   E5..         MOV     A,?V0 + 2
+   \   000067   6003         JZ      ??fattachInterrupt_8
+    156                PICTL |= 0x01;
+   \   000069   438C01       ORL     0x8c,#0x1
+    157              IEN1 |= 0x02;
+   \                     ??fattachInterrupt_8:
+   \   00006C   D2B9         SETB    0xb8.1
+    158              P2IFG &= ~(pin&0x1F);
+   \   00006E   E8           MOV     A,R0
+   \   00006F   F4           CPL     A
+   \   000070   528B         ANL     0x8b,A
+    159            }
+    160          
+    161            Interrupt_IO_Table[Interrupt_IO_TableCnt++] = pin;
+   \                     ??fattachInterrupt_4:
+   \   000072   90....       MOV     DPTR,#Interrupt_IO_TableCnt
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   C3           CLR     C
+   \   000077   33           RLC     A
+   \   000078   F8           MOV     R0,A
+   \   000079   E4           CLR     A
+   \   00007A   33           RLC     A
+   \   00007B   F9           MOV     R1,A
+   \   00007C   74..         MOV     A,#Interrupt_IO_Table & 0xff
+   \   00007E   28           ADD     A,R0
+   \   00007F   F582         MOV     DPL,A
+   \   000081   74..         MOV     A,#(Interrupt_IO_Table >> 8) & 0xff
+   \   000083   39           ADDC    A,R1
+   \   000084   F583         MOV     DPH,A
+   \   000086   EE           MOV     A,R6
+   \   000087   F0           MOVX    @DPTR,A
+   \   000088   A3           INC     DPTR
+   \   000089   EF           MOV     A,R7
+   \   00008A   F0           MOVX    @DPTR,A
+   \   00008B   90....       MOV     DPTR,#Interrupt_IO_TableCnt
+   \   00008E   E0           MOVX    A,@DPTR
+   \   00008F   04           INC     A
+   \   000090   F0           MOVX    @DPTR,A
+    162          
+    163            IO_Interrupt_Irq[(BitToNum((pin>>8)&0xFF)*8+BitToNum(pin&0xFF))].irq = fun;
+   \   000091                ; Setup parameters for call to function BitToNum
+   \   000091   EF           MOV     A,R7
+   \   000092   F9           MOV     R1,A
+   \   000093   12....       LCALL   ??BitToNum?relay
+   \   000096   E9           MOV     A,R1
+   \   000097   F5..         MOV     ?V0 + 4,A
+   \   000099   75..00       MOV     ?V0 + 5,#0x0
+   \   00009C   7403         MOV     A,#0x3
+   \   00009E   78..         MOV     R0,#?V0 + 4
+   \   0000A0   12....       LCALL   ?S_SHL
+   \   0000A3                ; Setup parameters for call to function BitToNum
+   \   0000A3   EE           MOV     A,R6
+   \   0000A4   F9           MOV     R1,A
+   \   0000A5   12....       LCALL   ??BitToNum?relay
+   \   0000A8   E9           MOV     A,R1
+   \   0000A9   F8           MOV     R0,A
+   \   0000AA   E5..         MOV     A,?V0 + 4
+   \   0000AC   28           ADD     A,R0
+   \   0000AD   F8           MOV     R0,A
+   \   0000AE   E5..         MOV     A,?V0 + 5
+   \   0000B0   3400         ADDC    A,#0x0
+   \   0000B2   F9           MOV     R1,A
+   \   0000B3   E8           MOV     A,R0
+   \   0000B4   33           RLC     A
+   \   0000B5   F8           MOV     R0,A
+   \   0000B6   E9           MOV     A,R1
+   \   0000B7   33           RLC     A
+   \   0000B8   F9           MOV     R1,A
+   \   0000B9   74..         MOV     A,#IO_Interrupt_Irq & 0xff
+   \   0000BB   28           ADD     A,R0
+   \   0000BC   F582         MOV     DPL,A
+   \   0000BE   74..         MOV     A,#(IO_Interrupt_Irq >> 8) & 0xff
+   \   0000C0   39           ADDC    A,R1
+   \   0000C1   F583         MOV     DPH,A
+   \   0000C3   E5..         MOV     A,?V0 + 0
+   \   0000C5   F0           MOVX    @DPTR,A
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   E5..         MOV     A,?V0 + 1
+   \   0000C9   F0           MOVX    @DPTR,A
+    164            EA = 1;
+   \   0000CA   D2AF         SETB    0xa8.7
+    165          
+    166          }
+   \   0000CC   7F06         MOV     R7,#0x6
+   \   0000CE   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000D1                REQUIRE P0IEN
+   \   0000D1                REQUIRE PICTL
+   \   0000D1                REQUIRE _A_IEN1
+   \   0000D1                REQUIRE P0IFG
+   \   0000D1                REQUIRE P1IEN
+   \   0000D1                REQUIRE IEN2
+   \   0000D1                REQUIRE P1IFG
+   \   0000D1                REQUIRE P2IEN
+   \   0000D1                REQUIRE P2IFG
+   \   0000D1                REQUIRE _A_IEN0
+    167          
+    168          #pragma vector = P0INT_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    169          __interrupt void P0_ISR(void)
+   \                     P0_ISR:
+    170          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74ED         MOV     A,#-0x13
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 19
+   \   000007                ; Auto size: 0
+    171            uint8_t index,i;
+    172            if(P0IFG>0) //按键中断
+   \   000007   E589         MOV     A,0x89
+   \   000009   7003         JNZ     $+5
+   \   00000B   02....       LJMP    ??P0_ISR_0
+    173            {
+    174              //Printf(0,"P0IFG:%c\r\n",P0IFG);
+    175              for(index=0; index<8; index++)
+   \   00000E   75..00       MOV     ?V0 + 2,#0x0
+    176              {
+    177                if( (P0IFG & (0x01<<index)) == (0x01<<index) )
+   \                     ??P0_ISR_1:
+   \   000011   75..01       MOV     ?V0 + 0,#0x1
+   \   000014   75..00       MOV     ?V0 + 1,#0x0
+   \   000017   E5..         MOV     A,?V0 + 2
+   \   000019   78..         MOV     R0,#?V0 + 0
+   \   00001B   12....       LCALL   ?S_SHL
+   \   00001E   AE..         MOV     R6,?V0 + 0
+   \   000020   AF..         MOV     R7,?V0 + 1
+   \   000022   E589         MOV     A,0x89
+   \   000024   5E           ANL     A,R6
+   \   000025   F8           MOV     R0,A
+   \   000026   EE           MOV     A,R6
+   \   000027   68           XRL     A,R0
+   \   000028   7001         JNZ     ??P0_ISR_2
+   \   00002A   EF           MOV     A,R7
+   \                     ??P0_ISR_2:
+   \   00002B   6003         JZ      $+5
+   \   00002D   02....       LJMP    ??P0_ISR_3
+    178                {
+    179                  for(i=0; i<Interrupt_IO_TableCnt; i++)
+   \   000030   75..00       MOV     ?V0 + 3,#0x0
+   \   000033   804F         SJMP    ??P0_ISR_4
+    180                  if(Interrupt_IO_Table[i] == GPIO_P0|(0x01<<index) )
+   \                     ??P0_ISR_5:
+   \   000035   C2F0         CLR     B.0
+   \                     ??P0_ISR_6:
+   \   000037   A2F0         MOV     C,B.0
+   \   000039   E4           CLR     A
+   \   00003A   33           RLC     A
+   \   00003B   4E           ORL     A,R6
+   \   00003C   F8           MOV     R0,A
+   \   00003D   EF           MOV     A,R7
+   \   00003E   F9           MOV     R1,A
+   \   00003F   E8           MOV     A,R0
+   \   000040   49           ORL     A,R1
+   \   000041   603F         JZ      ??P0_ISR_7
+    181                  {
+    182                    IO_Interrupt_Irq[(BitToNum((GPIO_P0_1>>8)&0xFF)*8+BitToNum(GPIO_P0_1&0xFF))].irq();
+   \   000043                ; Setup parameters for call to function BitToNum
+   \   000043   7901         MOV     R1,#0x1
+   \   000045   12....       LCALL   ??BitToNum?relay
+   \   000048   E9           MOV     A,R1
+   \   000049   F5..         MOV     ?V0 + 0,A
+   \   00004B                ; Setup parameters for call to function BitToNum
+   \   00004B   7902         MOV     R1,#0x2
+   \   00004D   12....       LCALL   ??BitToNum?relay
+   \   000050   E9           MOV     A,R1
+   \   000051   F5..         MOV     ?V0 + 4,A
+   \   000053                ; Setup parameters for indirect call
+   \   000053   75..00       MOV     ?V0 + 1,#0x0
+   \   000056   7403         MOV     A,#0x3
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?S_SHL
+   \   00005D   E5..         MOV     A,?V0 + 0
+   \   00005F   25..         ADD     A,?V0 + 4
+   \   000061   F8           MOV     R0,A
+   \   000062   E5..         MOV     A,?V0 + 1
+   \   000064   3400         ADDC    A,#0x0
+   \   000066   F9           MOV     R1,A
+   \   000067   E8           MOV     A,R0
+   \   000068   33           RLC     A
+   \   000069   F8           MOV     R0,A
+   \   00006A   E9           MOV     A,R1
+   \   00006B   33           RLC     A
+   \   00006C   F9           MOV     R1,A
+   \   00006D   74..         MOV     A,#IO_Interrupt_Irq & 0xff
+   \   00006F   28           ADD     A,R0
+   \   000070   F582         MOV     DPL,A
+   \   000072   74..         MOV     A,#(IO_Interrupt_Irq >> 8) & 0xff
+   \   000074   39           ADDC    A,R1
+   \   000075   F583         MOV     DPH,A
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   F8           MOV     R0,A
+   \   000079   A3           INC     DPTR
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   F583         MOV     DPH,A
+   \   00007D   8882         MOV     DPL,R0
+   \   00007F   12....       LCALL   ?CALL_IND
+    183                  }
+   \                     ??P0_ISR_7:
+   \   000082   05..         INC     ?V0 + 3
+   \                     ??P0_ISR_4:
+   \   000084   90....       MOV     DPTR,#Interrupt_IO_TableCnt
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   F8           MOV     R0,A
+   \   000089   E5..         MOV     A,?V0 + 3
+   \   00008B   C3           CLR     C
+   \   00008C   98           SUBB    A,R0
+   \   00008D   501F         JNC     ??P0_ISR_8
+   \   00008F   E5..         MOV     A,?V0 + 3
+   \   000091   C3           CLR     C
+   \   000092   33           RLC     A
+   \   000093   F8           MOV     R0,A
+   \   000094   E4           CLR     A
+   \   000095   33           RLC     A
+   \   000096   F9           MOV     R1,A
+   \   000097   74..         MOV     A,#Interrupt_IO_Table & 0xff
+   \   000099   28           ADD     A,R0
+   \   00009A   F582         MOV     DPL,A
+   \   00009C   74..         MOV     A,#(Interrupt_IO_Table >> 8) & 0xff
+   \   00009E   39           ADDC    A,R1
+   \   00009F   F583         MOV     DPH,A
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   7004         JNZ     ??P0_ISR_9
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   E0           MOVX    A,@DPTR
+   \   0000A6   6401         XRL     A,#0x1
+   \                     ??P0_ISR_9:
+   \   0000A8   708B         JNZ     ??P0_ISR_5
+   \   0000AA   D2F0         SETB    B.0
+   \   0000AC   8089         SJMP    ??P0_ISR_6
+    184                  P0IFG &= ~(0x01<<index);
+   \                     ??P0_ISR_8:
+   \   0000AE   EE           MOV     A,R6
+   \   0000AF   F4           CPL     A
+   \   0000B0   5289         ANL     0x89,A
+    185                  
+    186                }
+    187              }
+   \                     ??P0_ISR_3:
+   \   0000B2   05..         INC     ?V0 + 2
+   \   0000B4   E5..         MOV     A,?V0 + 2
+   \   0000B6   C3           CLR     C
+   \   0000B7   9408         SUBB    A,#0x8
+   \   0000B9   5003         JNC     $+5
+   \   0000BB   02....       LJMP    ??P0_ISR_1
+    188              //P0IFG = 0;
+    189            }
+    190            P0IF = 0; //清中断标??}
+   \                     ??P0_ISR_0:
+   \   0000BE   C2C5         CLR     0xc0.5
+    191          }
+   \   0000C0   7F06         MOV     R7,#0x6
+   \   0000C2   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+   \   0000C5                REQUIRE P0IFG
+   \   0000C5                REQUIRE _A_IRCON
+    192          
+    193          #pragma vector = P1INT_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    194          __interrupt void P1_ISR(void)
+   \                     P1_ISR:
+    195          {
+   \   000000   C0E0         PUSH    A
+   \   000002                ; Saved register size: 2
+   \   000002                ; Auto size: 0
+    196            if(P1IFG>0) //按键中断
+   \   000002   E58A         MOV     A,0x8a
+    197            {
+    198              /*
+    199              switch(P1IFG)
+    200              {
+    201              case Pin_0: P1_0IRQ();      P1IFG &= ~(Pin_0);
+    202                break;
+    203              case Pin_1: P1_1IRQ();      P1IFG &= ~(Pin_1);
+    204                break;
+    205              case Pin_2: P1_2IRQ();      P1IFG &= ~(Pin_2);
+    206                break;
+    207              case Pin_3: P1_3IRQ();      P1IFG &= ~(Pin_3);
+    208                break;
+    209              case Pin_4: P1_4IRQ();      P1IFG &= ~(Pin_4);
+    210                break;    
+    211              case Pin_5: P1_5IRQ();      P1IFG &= ~(Pin_5);
+    212                break;
+    213              case Pin_6: P1_6IRQ();      P1IFG &= ~(Pin_6);
+    214                break;
+    215              case Pin_7: P1_7IRQ();      P1IFG &= ~(Pin_7);
+    216                break;
+    217              default:;
+    218              }
+    219              */
+    220              //P1IFG = 0;
+    221            }
+    222            P1IF = 0; //清中断标??}
+   \   000004   C2EB         CLR     0xe8.3
+    223          }
+   \   000006   D0E0         POP     A
+   \   000008   32           RETI
+   \   000009                REQUIRE P1IFG
+   \   000009                REQUIRE _A_IRCON2
+    224          
+    225          #pragma vector = P2INT_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    226          __interrupt void P2_ISR(void)
+   \                     P2_ISR:
+    227          {
+   \   000000   C0E0         PUSH    A
+   \   000002                ; Saved register size: 2
+   \   000002                ; Auto size: 0
+    228            if(P2IFG>0) //按键中断
+   \   000002   E58B         MOV     A,0x8b
+    229            {
+    230              /*
+    231              switch(P2IFG)
+    232              {
+    233              case Pin_0: P2_0IRQ();      P2IFG &= ~(Pin_0);
+    234                break;
+    235              case Pin_1: P2_1IRQ();      P2IFG &= ~(Pin_1);
+    236                break;
+    237              case Pin_2: P2_2IRQ();      P2IFG &= ~(Pin_2);
+    238                break;
+    239              case Pin_3: P2_3IRQ();      P2IFG &= ~(Pin_3);
+    240                break;
+    241              case Pin_4: P2_4IRQ();      P2IFG &= ~(Pin_4);
+    242                break;
+    243              default:;
+    244              }
+    245              */
+    246              //P2IFG = 0;
+    247            }
+    248            P2IF = 0; //清中断标??}
+   \   000004   C2E8         CLR     0xe8.0
+    249          }
+   \   000006   D0E0         POP     A
+   \   000008   32           RETI
+   \   000009                REQUIRE P2IFG
+   \   000009                REQUIRE _A_IRCON2
+
+   \                                 In  segment INTVEC, offset 0x33, root
+   \                     `??P2_ISR??INTVEC 51`:
+   \   000033   02....       LJMP       (P2_ISR)
+
+   \                                 In  segment INTVEC, offset 0x6b, root
+   \                     `??P0_ISR??INTVEC 107`:
+   \   00006B   02....       LJMP       (P0_ISR)
+
+   \                                 In  segment INTVEC, offset 0x7b, root
+   \                     `??P1_ISR??INTVEC 123`:
+   \   00007B   02....       LJMP       (P1_ISR)
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??fPinMode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    fPinMode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??fattachInterrupt?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    fattachInterrupt
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     P0_ISR               0      0     19
+       -> BitToNum        0      0     38
+       -> BitToNum        0      0     38
+     P1_ISR               2      0      0
+     P2_ISR               2      0      0
+     fPinMode             0      0     25
+     fattachInterrupt     0      0     14
+       -> fPinMode        0      0     28
+       -> fPinMode        0      0     28
+       -> BitToNum        0      0     28
+       -> BitToNum        0      0     28
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     P0IFG                       1
+     P1IFG                       1
+     P2IFG                       1
+     PICTL                       1
+     P1IEN                       1
+     P0INP                       1
+     IEN2                        1
+     _A_IEN0                     1
+     P0IEN                       1
+     P2IEN                       1
+     _A_IEN1                     1
+     _A_IRCON                    1
+     _A_IRCON2                   1
+     P0SEL                       1
+     P1SEL                       1
+     P2SEL                       1
+     P1INP                       1
+     P2INP                       1
+     P0DIR                       1
+     P1DIR                       1
+     P2DIR                       1
+     fPinMode                  245
+     ?Subroutine1                9
+     ?Subroutine0                9
+     IO_Interrupt_Irq           42
+     Interrupt_IO_Table         42
+     Interrupt_IO_TableCnt       1
+     fattachInterrupt          209
+     P0_ISR                    197
+     P1_ISR                      9
+     P2_ISR                      9
+     ??P2_ISR??INTVEC 51         3
+     ??P0_ISR??INTVEC 107        3
+     ??P1_ISR??INTVEC 123        3
+     ??fPinMode?relay            6
+     ??fattachInterrupt?relay    6
+
+ 
+ 472 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   9 bytes in segment INTVEC
+ 215 bytes in segment NEAR_CODE
+  21 bytes in segment SFR_AN
+  85 bytes in segment XDATA_Z
+ 
+ 699 bytes of CODE  memory (+  9 bytes shared)
+   0 bytes of DATA  memory (+ 21 bytes shared)
+  85 bytes of XDATA memory
+
+Errors: none
+Warnings: none
